@@ -84,10 +84,10 @@
     </section>
 
     <!-- Concept -->
-    <section class="bg-light">
+    <section class="bg-light text-dark">
         <div class="container text-center">
             <h2 class="h2 py-lg">Nasza koncepcja szyta na miarę</h2>
-            <p class="text-dark container-sm">
+            <p class="container-sm">
                 Luksus to nie kwestia gwiazd, ale tego, co najbardziej autentyczne, sekretne lub oryginalne. Niezależnie od tego, czy marzysz o ucieczce, ekstremalnej podróży, przygodzie czy relaksie, wyobrażamy sobie wyjazdy, które Ci odpowiadają.
             </p>
             <div class="flex justify-content-center align-items-center gap-lg py-lg">
