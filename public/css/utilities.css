@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&family=Oswald:wght@300;400;500&display=swap);
+/* Variables */
+
+:root {
+    --font-primary: "Nunito", sans-serif;
+    --font-secondary: "Oswald", sans-serif;
+    --text-muted: rgba(0, 0, 0, 0.6);
+}
+
+/* Reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Containers */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+/* Display */
+.flex {
+    display: flex;
+}
+
+.gap-md {
+    gap: 20px;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+/* Margins */
+.my-md {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+/* Text */
+
+.text-center {
+    text-align: center;
+}
+
+.font-primary {
+    font-family: var(--font-primary);
+}
+
+.font-secondary {
+    font-family: var(--font-secondary);
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.text-black {
+    color: #000;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.text-md {
+    font-size: 1rem;
+}
+
+.text-lg {
+    font-size: 1.4rem;
+}
+
+.text-xl {
+    font-size: 1.8rem;
+}
+
+/* Headings */
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: var(--font-secondary);
+    font-weight: 500;
+}
+
+.h1 {
+    font-size: 5rem;
+    letter-spacing: 1rem;
+}
+
+.h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+}
+
+/* Positions */
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+/* Sizes */
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+/* Buttons */
+
+.btn {
+    text-transform: uppercase;
+    padding: 5px 15px;
+    font-family: var(--font-secondary);
+    letter-spacing: 0.3rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-light {
+    border: 3px solid #fff;
+    color: #fff;
+}
+
+.btn-dark {
+    border: 3px solid #000;
+    color: #000;
+}
+
+.btn:hover {
+    letter-spacing: 0.22rem;
+}
+
+.btn-light:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
