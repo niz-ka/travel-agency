@@ -130,10 +130,21 @@
     </section>
 
     <!-- Slider -->
-    <section>
-
+    <section class="my-lg">
+        <div class="container">
+            <div class="slider" slider-duration="4000">
+                <button class="prev"><i class="fas fa-chevron-left fa-2x"></i></button>
+                <button class="next"><i class="fas fa-chevron-right fa-2x"></i></button>
+                <div class="slide current" style="background-image:url('{{asset("img/s1.jpg")}}')"></div>
+                <div class="slide" style="background-image:url('{{asset("img/s2.jpg")}}')"></div>
+                <div class="slide" style="background-image:url('{{asset("img/s3.jpg")}}')"></div>
+                <div class="slide" style="background-image:url('{{asset("img/s4.jpg")}}')"></div>
+            </div>
+        </div>
     </section>
 
+
     <script src={{asset("js/anim.js")}}></script>
+    <script src="{{ asset("js/slider.js") }}"></script>
 </body>
 </html>
