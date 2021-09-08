@@ -30,10 +30,20 @@ ul {
     list-style: none;
 }
 
+p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
 /* Containers */
 
 .container {
     max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container-sm {
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -50,6 +60,10 @@ ul {
     gap: 20px;
 }
 
+.gap-lg {
+    gap: 40px;
+}
+
 .flex-column {
     flex-direction: column;
 }
@@ -60,8 +74,29 @@ ul {
     margin-bottom: 10px;
 }
 
+.my-lg {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Paddings */
+
+.py-md {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.py-lg {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 .justify-content-center {
     justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
 }
 
 .align-items-center {
@@ -98,6 +133,10 @@ ul {
     color: #fff;
 }
 
+.text-dark {
+    color: #333333;
+}
+
 .text-md {
     font-size: 1rem;
 }
@@ -124,6 +163,13 @@ ul {
 .h1 {
     font-size: 5rem;
     letter-spacing: 1rem;
+}
+
+.h2 {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: #333333;
 }
 
 .h3 {
@@ -176,4 +222,9 @@ ul {
 
 .btn-light:hover {
     background: rgba(255, 255, 255, 0.2);
+}
+
+/* Background */
+.bg-light {
+    background-color: #f8f8f8;
 }

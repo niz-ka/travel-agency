@@ -1,6 +1,5 @@
 .background-video {
     overflow: hidden;
-    margin-top: 20px;
     background: rgba(0, 0, 0, 0.2);
 }
 
@@ -19,5 +18,15 @@ video {
     top: 0;
     left: 0;
     z-index: -1;
+}
+
+.inspiring-section > div {
+    flex-basis: 50%;
+}
+
+.inspiring-section p {
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: justify;
 }
 

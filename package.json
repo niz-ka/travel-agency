@@ -17,6 +17,13 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
-        "prettier": "^2.3.2"
+        "prettier": "^2.3.2",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.39.0",
+        "sass-loader": "^12.1.0"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.4",
+        "aos": "^2.3.4"
     }
 }
