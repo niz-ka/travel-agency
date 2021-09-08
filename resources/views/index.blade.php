@@ -12,6 +12,25 @@
 
         <!-- Font awesome -->
         <link rel="stylesheet" href="{{ asset("css/font-awesome.css") }}">
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="{{asset("favicon/apple-icon-57x57.png")}}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{asset("favicon/apple-icon-60x60.png")}}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{asset("favicon/apple-icon-72x72.png")}}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{asset("favicon/apple-icon-76x76.png")}}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{asset("favicon/apple-icon-114x114.png")}}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{asset("favicon/apple-icon-120x120.png")}}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{asset("favicon/apple-icon-144x144.png")}}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{asset("favicon/apple-icon-152x152.png")}}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{asset("favicon/apple-icon-180x180.png")}}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{asset("favicon/android-icon-192x192.png")}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{asset("favicon/favicon-32x32.png")}}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{asset("favicon/favicon-96x96.png")}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset("favicon/favicon-16x16.png")}}">
+        <link rel="manifest" href="{{asset("favicon/manifest.json")}}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{{asset("favicon/ms-icon-144x144.png")}}">
+        <meta name="theme-color" content="#ffffff">
     </head>
 
 <body class="font-primary">
@@ -19,7 +38,7 @@
     <header class="my-lg">
         <div class="container text-center">
             <div class="logo my-md">
-                <img src="{{ asset("img/logo.png") }}" alt="Logo travel.io">
+                <img src="{{ asset("img/logo.png") }}" alt="Logo travel.io" width="300" height="80">
             </div>
             <nav class="my-md">
                 <ul class="text-uppercase font-secondary flex justify-content-center gap-md text-muted">
@@ -36,7 +55,7 @@
     <!-- Video section -->
     <section class="background-video">
             <div class="video-wrapper">
-                <video class="background-video" playsinline autoplay muted loop poster="{{asset("img/video.jpg")}}">
+                <video class="background-video" playsinline autoplay muted loop poster="{{asset("img/video.jpg")}}" preload="none">
                     <source src="{{ asset("video/background_video.mp4") }}" type="video/mp4">
                 </video>
 
@@ -61,7 +80,7 @@
             </div>
             <!-- Image -->
             <div>
-                <img src="{{ asset("img/tr1.jpg") }}" alt="Fotografia gór">
+                <img src="{{ asset("img/tr1.jpg") }}" alt="Fotografia gór" width="1482" height="981">
             </div>
         </div>
     </section>
@@ -70,7 +89,7 @@
         <div class="flex align-items-center inspiring-section">
             <!-- Image -->
             <div>
-                <img src="{{ asset("img/tr2.jpg") }}" alt="Fotografia gór">
+                <img src="{{ asset("img/tr2.jpg") }}" alt="Fotografia gór" width="1472" height="981">
             </div>
             <!-- Text -->
             <div class="text-center">
@@ -108,6 +127,11 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Slider -->
+    <section>
+
     </section>
 
     <script src={{asset("js/anim.js")}}></script>
