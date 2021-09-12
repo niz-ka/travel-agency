@@ -46,11 +46,10 @@
             </div>
             <nav class="my-lg">
                 <ul class="text-uppercase font-secondary flex justify-content-center gap-md text-muted letter-spacing">
-                    <li><a href="#" class="text-black">Główna</a></li>
-                    <li><a href="#">Koncept</a></li>
-                    <li><a href="#">Nasze miejsca</a></li>
-                    <li><a href="#">Aktualności</a></li>
-                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#dlaczego-my">Dlaczego my?</a></li>
+                    <li><a href="#nasz-koncept">Koncept</a></li>
+                    <li><a href="#aktualnosci">Aktualności</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
@@ -72,7 +71,7 @@
     </section>
 
     <!-- Inspiring Sections [1] -->
-    <section data-aos="fade-right" data-aos-duration="1000" class="py-lg">
+    <section data-aos="fade-right" data-aos-duration="1000" class="py-lg" id="dlaczego-my">
         <div class="container">
             <div class="flex align-items-center inspiring-section gap-lg">
                 <!-- Text -->
@@ -112,7 +111,7 @@
     </section>
 
     <!-- Concept -->
-    <section class="concept bg-light text-dark">
+    <section class="concept bg-light text-dark" id="nasz-koncept">
         <div class="container text-center">
             <h2 class="h2 py-lg">Nasza koncepcja szyta na miarę</h2>
             <p class="container-sm">
@@ -155,7 +154,7 @@
     </section>
 
     <!-- Blog cards -->
-    <section class="bg-light">
+    <section class="bg-light" id="aktualnosci">
         <div class="container text-center text-dark">
             <h2 class="h2 py-lg">Ostatnie wieści</h2>
             <p class="container-sm">Pomysły na podróże, wydarzenia, modne kierunki... na naszym blogu znajdziesz wszystkie nowości ze świata w ich oryginalnej wersji</p>
@@ -193,7 +192,7 @@
     </section>
 
     <!-- Contact -->
-    <section class="bg-black contact-section">
+    <section class="bg-black contact-section" id="kontakt">
         <div class="container text-white">
             <h2 class="h2 text-white text-center py-lg mb-lg">Kontakt</h2>
             <div class="flex py-lg justify-content-around gap-lg">

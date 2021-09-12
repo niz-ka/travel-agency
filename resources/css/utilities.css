@@ -8,6 +8,7 @@
     --text-muted: rgba(0, 0, 0, 0.6);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
 }
 
 /* Reset */

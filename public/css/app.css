@@ -1,3 +1,8 @@
+.header nav li:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
 .background-video {
     overflow: hidden;
     background: rgba(0, 0, 0, 0.2);
