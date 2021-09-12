@@ -36,12 +36,12 @@
 
 <body class="font-primary">
     <!-- Header -->
-    <header class="my-lg">
+    <header>
         <div class="container">
             <div class="logo my-md">
                 <img src="{{ asset("img/logo.png") }}" alt="Logo travel.io" width="300" height="80" class="mx-auto">
             </div>
-            <nav class="my-md">
+            <nav class="my-lg">
                 <ul class="text-uppercase font-secondary flex justify-content-center gap-md text-muted letter-spacing">
                     <li><a href="#" class="text-black">Główna</a></li>
                     <li><a href="#">Koncept</a></li>
@@ -69,7 +69,7 @@
     </section>
 
     <!-- Inspiring Sections -->
-    <section data-aos="fade-right" data-aos-duration="1000" class="my-lg">
+    <section data-aos="fade-right" data-aos-duration="1000" class="py-lg">
         <div class="container">
             <div class="flex align-items-center inspiring-section">
                 <!-- Text -->
@@ -88,7 +88,7 @@
         </div>
     </section>
 
-    <section data-aos="fade-right" data-aos-duration="1000" class="my-lg">
+    <section data-aos="fade-right" data-aos-duration="1000" class="py-lg">
         <div class="container">
             <div class="flex align-items-center inspiring-section">
                 <!-- Image -->
@@ -135,7 +135,7 @@
     </section>
 
     <!-- Slider -->
-    <section class="my-lg">
+    <section class="py-lg">
         <div class="container">
             <div class="slider" slider-duration="4000">
                 <button aria-label="Poprzedni slajd" class="prev"><i class="fas fa-chevron-left fa-2x"></i></button>
