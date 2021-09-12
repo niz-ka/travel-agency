@@ -24,8 +24,8 @@ video {
 }
 
 .inspiring-section p {
-    max-width: 400px;
-    margin: 20px auto;
+    max-width: 600px;
+    margin: 25px auto;
     text-align: justify;
 }
 
@@ -35,6 +35,7 @@ video {
     justify-content: center;
     align-items: stretch;
     gap: 40px;
+    color: #333;
 }
 
 .entry {
@@ -102,6 +103,8 @@ video {
     flex-direction: column;
     gap: 30px;
     color: #fff;
+    max-width: 400px;
+    width: 100%;
 }
 
 .contact-form label {
@@ -115,16 +118,94 @@ video {
 .contact-form input,
 .contact-form textarea {
     background-color: rgba(99, 99, 99, 0.2);
-    width: 400px;
     padding: 10px;
+    width: 100%;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border: 1px solid white;
+    outline: 1px solid #dca57d;
 }
 
 /* Contact icons width */
 .contact-section i {
     width: 32px;
+}
+
+.nav-button {
+    display: none;
+}
+
+.show {
+    display: block !important;
+}
+
+/* Meida */
+@media (max-width: 900px) {
+    .inspiring-section,
+    .concept .flex,
+    nav .flex,
+    .entries,
+    .contact-section .flex {
+        flex-direction: column !important;
+    }
+
+    .contact-section {
+        text-align: center;
+    }
+
+    .contact-form {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .h1 {
+        font-size: 3.5rem;
+    }
+
+    .inspiring-section p {
+        text-align: left;
+    }
+
+    .btn {
+        letter-spacing: 0.1rem;
+    }
+
+    .header {
+        position: fixed;
+        background: #fff;
+        width: 100%;
+        z-index: 100;
+    }
+
+    .header .container {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .header nav {
+        display: none;
+        position: absolute;
+        width: 100%;
+        background: #fff;
+        top: 40px;
+        left: 0;
+        padding: 10px;
+    }
+
+    .nav-button {
+        display: block;
+    }
+
+    .header img {
+        width: 100px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 380px) {
+    .h1 {
+        font-size: 2.5rem;
+    }
 }

@@ -101,6 +101,10 @@ textarea {
     flex-direction: column;
 }
 
+.flex-row {
+    flex-direction: row;
+}
+
 /* Margins */
 .my-md {
     margin-top: 10px;
@@ -129,6 +133,11 @@ textarea {
 .py-md {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.px-md {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .py-lg {

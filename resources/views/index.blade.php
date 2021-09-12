@@ -36,10 +36,13 @@
 
 <body class="font-primary">
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo my-md">
-                <img src="{{ asset("img/logo.png") }}" alt="Logo travel.io" width="300" height="80" class="mx-auto">
+    <header class="header">
+        <div class="container position-relative">
+            <div class="flex align-items-center justify-content-between">
+                <button class="nav-button"><i class="fas fa-bars fa-2x"></i></button>
+                <div class="logo my-md mx-auto">
+                    <img src="{{ asset("img/logo.png") }}" alt="Logo travel.io" width="300" height="80" class="mx-auto">
+                </div>
             </div>
             <nav class="my-lg">
                 <ul class="text-uppercase font-secondary flex justify-content-center gap-md text-muted letter-spacing">
@@ -61,17 +64,17 @@
                 </video>
 
                 <div class="text-white position-absolute w-100 h-100 flex justify-content-center align-items-center flex-column gap-md">
-                    <h2 class="h1 text-uppercase">Biuro podróży</h2>
-                    <span class="h3 my-md">Twoja podróż jest wyjątkowa</span>
+                    <h2 class="h1 text-uppercase text-center">Biuro podróży</h2>
+                    <span class="h3 my-md text-center">Twoja podróż jest wyjątkowa</span>
                     <a href="#" class="btn btn-light my-md">Odkryj nas</a>
                 </div>
             </div>
     </section>
 
-    <!-- Inspiring Sections -->
+    <!-- Inspiring Sections [1] -->
     <section data-aos="fade-right" data-aos-duration="1000" class="py-lg">
         <div class="container">
-            <div class="flex align-items-center inspiring-section">
+            <div class="flex align-items-center inspiring-section gap-lg">
                 <!-- Text -->
                 <div class="text-center">
                     <h2 class="h2">Twórca doświadczeń</h2>
@@ -88,9 +91,10 @@
         </div>
     </section>
 
+    <!-- Inspiring Sections [2] -->
     <section data-aos="fade-right" data-aos-duration="1000" class="py-lg">
         <div class="container">
-            <div class="flex align-items-center inspiring-section">
+            <div class="flex align-items-center inspiring-section gap-lg">
                 <!-- Image -->
                 <div>
                     <img src="{{ asset("img/tr2.jpg") }}" alt="Fotografia gór" width="1472" height="981">
@@ -108,7 +112,7 @@
     </section>
 
     <!-- Concept -->
-    <section class="bg-light text-dark">
+    <section class="concept bg-light text-dark">
         <div class="container text-center">
             <h2 class="h2 py-lg">Nasza koncepcja szyta na miarę</h2>
             <p class="container-sm">
@@ -117,17 +121,17 @@
             <div class="flex justify-content-center align-items-center gap-lg py-lg">
                 <div>
                     <i class="fas fa-globe-europe fa-7x"></i>
-                    <h3 class="h3">Wiedza</h3>
+                    <h3 class="h3 my-md">Wiedza</h3>
                     <p>Dobrzy koneserzy tego świata, będziemy w stanie Ci doradzić i skierować Cię do miejsc, które naprawdę Ci odpowiadają.</p>
                 </div>
                 <div>
                     <i class="fas fa-map-marked-alt fa-7x"></i>
-                    <h3 class="h3">Dostosowywanie</h3>
+                    <h3 class="h3 my-md">Dostosowywanie</h3>
                     <p>Wspólnie budujemy trasę, która łączy Twoje pasje, pragnienia i możliwości oferowane przez miejsca docelowe. Poświęcenie czasu na wysłuchanie Cię i poznanie Cię jest naszym priorytetem. </p>
                 </div>
                 <div>
                     <i class="fas fa-ticket-alt fa-7x"></i>
-                    <h3 class="h3">Towarzyszenie</h3>
+                    <h3 class="h3 my-md">Towarzyszenie</h3>
                     <p>Jesteśmy po Twojej stronie wcześniej, aby rozwijać Twoją podróż, w trakcie, aby Cię poprowadzić, a po powrocie, aby podzielić się wspomnieniami.</p>
                 </div>
             </div>
@@ -163,7 +167,7 @@
                         <img src="{{ asset("img/s1.jpg") }}" alt="Zdjęcie wpisu">
                     </div>
                     <div class="entry-text">
-                        <h3 class="h3">Gdzie podróżować tego lata?</h3>
+                        <h3 class="h3 my-md">Gdzie podróżować tego lata?</h3>
                         <p>Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.</p>
                     </div>
                 </div>
@@ -174,7 +178,7 @@
                         <img src="{{ asset("img/s1.jpg") }}" alt="Zdjęcie wpisu">
                     </div>
                     <div class="entry-text">
-                        <h3 class="h3">Gdzie podróżować tego lata?</h3>
+                        <h3 class="h3 my-md">Gdzie podróżować tego lata?</h3>
                         <p>Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.</p>
                     </div>
                 </div>
@@ -185,7 +189,7 @@
                         <img src="{{ asset("img/s1.jpg") }}" alt="Zdjęcie wpisu">
                     </div>
                     <div class="entry-text">
-                        <h3 class="h3">Gdzie podróżować tego lata?</h3>
+                        <h3 class="h3 my-md">Gdzie podróżować tego lata?</h3>
                         <p>Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.</p>
                     </div>
                 </div>
@@ -201,10 +205,10 @@
     <!-- Contact -->
     <section class="bg-black contact-section">
         <div class="container text-white">
-            <h2 class="h2 text-white text-center py-lg">Kontakt</h2>
-            <div class="flex py-lg justify-content-around">
+            <h2 class="h2 text-white text-center py-lg mb-lg">Kontakt</h2>
+            <div class="flex py-lg justify-content-around gap-lg">
                 <!-- Contact info -->
-                <div class="flex flex-column gap-md pb-md">
+                <div class="flex flex-column gap-lg">
                     <div class="flex align-items-center gap-md">
                             <i class="fas fa-phone-alt fa-2x"></i>
                         <div>
@@ -274,5 +278,10 @@
 
     <script src={{asset("js/anim.js")}}></script>
     <script src="{{ asset("js/slider.js") }}"></script>
+    <script>
+        document.querySelector(".nav-button").addEventListener("click", () => {
+            document.querySelector(".header nav").classList.toggle("show");
+        });
+    </script>
 </body>
 </html>
