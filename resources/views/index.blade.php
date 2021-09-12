@@ -199,7 +199,7 @@
     </section>
 
     <!-- Contact -->
-    <section class="bg-black">
+    <section class="bg-black contact-section">
         <div class="container text-white">
             <h2 class="h2 text-white text-center py-lg">Kontakt</h2>
             <div class="flex py-lg justify-content-around">

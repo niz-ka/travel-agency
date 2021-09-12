@@ -126,3 +126,8 @@ video {
     border: 1px solid white;
 }
 
+/* Contact icons width */
+.contact-section i {
+    width: 32px;
+}
+
