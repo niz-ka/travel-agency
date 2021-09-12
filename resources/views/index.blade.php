@@ -39,7 +39,7 @@
     <header class="header">
         <div class="container position-relative">
             <div class="flex align-items-center justify-content-between">
-                <button class="nav-button"><i class="fas fa-bars fa-2x"></i></button>
+                <button class="nav-button" aria-label="Przycisk nawigacji"><i class="fas fa-bars fa-2x"></i></button>
                 <div class="logo my-md mx-auto">
                     <img src="{{ asset("img/logo.png") }}" alt="Logo travel.io" width="300" height="80" class="mx-auto">
                 </div>
@@ -59,7 +59,7 @@
     <!-- Video section -->
     <section class="background-video">
             <div class="video-wrapper">
-                <video class="background-video" playsinline autoplay muted loop poster="{{asset("img/video.jpg")}}" preload="none">
+                <video class="background-video" playsinline autoplay muted loop poster="{{asset("img/video.jpg")}}" preload="none" role="presentation">
                     <source src="{{ asset("video/background_video.mp4") }}" type="video/mp4">
                 </video>
 
@@ -85,7 +85,7 @@
                 </div>
                 <!-- Image -->
                 <div>
-                    <img src="{{ asset("img/tr1.jpg") }}" alt="Fotografia gór" width="1482" height="981">
+                    <img src="{{ asset("img/tr1.jpg") }}" alt="" width="1482" height="981">
                 </div>
             </div>
         </div>
@@ -97,7 +97,7 @@
             <div class="flex align-items-center inspiring-section gap-lg">
                 <!-- Image -->
                 <div>
-                    <img src="{{ asset("img/tr2.jpg") }}" alt="Fotografia gór" width="1472" height="981">
+                    <img src="{{ asset("img/tr2.jpg") }}" alt="" width="1472" height="981">
                 </div>
                 <!-- Text -->
                 <div class="text-center">
@@ -139,7 +139,7 @@
     </section>
 
     <!-- Slider -->
-    <section class="py-lg">
+    <section class="py-lg" role="presentation">
         <div class="container">
             <div class="slider" slider-duration="4000">
                 <button aria-label="Poprzedni slajd" class="prev"><i class="fas fa-chevron-left fa-2x"></i></button>
@@ -162,37 +162,25 @@
         <div class="container py-lg">
             <div class="entries">
                 <!-- First entry -->
-                <div class="entry">
-                    <div class="entry-img">
-                        <img src="{{ asset("img/s1.jpg") }}" alt="Zdjęcie wpisu">
-                    </div>
-                    <div class="entry-text">
-                        <h3 class="h3 my-md">Gdzie podróżować tego lata?</h3>
-                        <p>Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.</p>
-                    </div>
-                </div>
+                <x-blog-card>
+                    <x-slot name="img">{{ asset("img/s1.jpg") }}</x-slot>
+                    <x-slot name="title">Gdzie podróżować tego lata?</x-slot>
+                    Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.
+                </x-blog-card>
 
                 <!-- Second entry -->
-                <div class="entry">
-                    <div class="entry-img">
-                        <img src="{{ asset("img/s1.jpg") }}" alt="Zdjęcie wpisu">
-                    </div>
-                    <div class="entry-text">
-                        <h3 class="h3 my-md">Gdzie podróżować tego lata?</h3>
-                        <p>Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.</p>
-                    </div>
-                </div>
+                 <x-blog-card>
+                    <x-slot name="img">{{ asset("img/s1.jpg") }}</x-slot>
+                    <x-slot name="title">Gdzie podróżować tego lata?</x-slot>
+                    Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.
+                </x-blog-card>
 
                 <!-- Third entry -->
-                <div class="entry">
-                    <div class="entry-img">
-                        <img src="{{ asset("img/s1.jpg") }}" alt="Zdjęcie wpisu">
-                    </div>
-                    <div class="entry-text">
-                        <h3 class="h3 my-md">Gdzie podróżować tego lata?</h3>
-                        <p>Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.</p>
-                    </div>
-                </div>
+                 <x-blog-card>
+                    <x-slot name="img">{{ asset("img/s1.jpg") }}</x-slot>
+                    <x-slot name="title">Gdzie podróżować tego lata?</x-slot>
+                    Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.
+                </x-blog-card>
             </div>
 
             <!-- Read more -->
