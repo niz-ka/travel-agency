@@ -119,21 +119,23 @@
                 Luksus to nie kwestia gwiazd, ale tego, co najbardziej autentyczne, sekretne lub oryginalne. Niezależnie od tego, czy marzysz o ucieczce, ekstremalnej podróży, przygodzie czy relaksie, wyobrażamy sobie wyjazdy, które Ci odpowiadają.
             </p>
             <div class="flex justify-content-center align-items-center gap-lg py-lg">
-                <div>
-                    <i class="fas fa-globe-europe fa-7x"></i>
-                    <h3 class="h3 my-md">Wiedza</h3>
-                    <p>Dobrzy koneserzy tego świata, będziemy w stanie Ci doradzić i skierować Cię do miejsc, które naprawdę Ci odpowiadają.</p>
-                </div>
-                <div>
-                    <i class="fas fa-map-marked-alt fa-7x"></i>
-                    <h3 class="h3 my-md">Dostosowywanie</h3>
-                    <p>Wspólnie budujemy trasę, która łączy Twoje pasje, pragnienia i możliwości oferowane przez miejsca docelowe. Poświęcenie czasu na wysłuchanie Cię i poznanie Cię jest naszym priorytetem. </p>
-                </div>
-                <div>
-                    <i class="fas fa-ticket-alt fa-7x"></i>
-                    <h3 class="h3 my-md">Towarzyszenie</h3>
-                    <p>Jesteśmy po Twojej stronie wcześniej, aby rozwijać Twoją podróż, w trakcie, aby Cię poprowadzić, a po powrocie, aby podzielić się wspomnieniami.</p>
-                </div>
+                <x-concept-card>
+                    <x-slot name="iconClass">fas fa-globe-europe fa-7x</x-slot>
+                    <x-slot name="title">Wiedza</x-slot>
+                    Dobrzy koneserzy tego świata, będziemy w stanie Ci doradzić i skierować Cię do miejsc, które naprawdę Ci odpowiadają.
+                </x-concept-card>
+
+                <x-concept-card>
+                    <x-slot name="iconClass">fas fa-map-marked-alt fa-7x</x-slot>
+                    <x-slot name="title">Dostosowywanie</x-slot>
+                    Wspólnie budujemy trasę, która łączy Twoje pasje, pragnienia i możliwości oferowane przez miejsca docelowe. Poświęcenie czasu na wysłuchanie Cię i poznanie Cię jest naszym priorytetem.
+                </x-concept-card>
+
+                <x-concept-card>
+                    <x-slot name="iconClass">fas fa-ticket-alt fa-7x</x-slot>
+                    <x-slot name="title">Towarzyszenie</x-slot>
+                    Jesteśmy po Twojej stronie wcześniej, aby rozwijać Twoją podróż, w trakcie, aby Cię poprowadzić, a po powrocie, aby podzielić się wspomnieniami.
+                </x-concept-card>
             </div>
         </div>
     </section>
