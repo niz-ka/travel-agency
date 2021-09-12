@@ -14,7 +14,7 @@ const mix = require("laravel-mix");
 mix.js("resources/js/app.js", "public/js")
     .js("resources/js/anim.js", "public/js")
     .js("resources/js/slider.js", "public/js")
-    .sass("resources/scss/font-awesome.scss", "public/css");
-
-mix.postCss("resources/css/utilities.css", "public/css");
-mix.postCss("resources/css/app.css", "public/css");
+    .sass("resources/scss/font-awesome.scss", "public/css")
+    .postCss("resources/css/utilities.css", "public/css")
+    .postCss("resources/css/app.css", "public/css")
+    .sourceMaps();

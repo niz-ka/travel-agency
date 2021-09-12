@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="travel.io - inspiracje podróżami z całego świata">
 
         <title>{{ config("app.name") }} - Biuro Podróży</title>
 
@@ -36,12 +37,12 @@
 <body class="font-primary">
     <!-- Header -->
     <header class="my-lg">
-        <div class="container text-center">
+        <div class="container">
             <div class="logo my-md">
-                <img src="{{ asset("img/logo.png") }}" alt="Logo travel.io" width="300" height="80">
+                <img src="{{ asset("img/logo.png") }}" alt="Logo travel.io" width="300" height="80" class="mx-auto">
             </div>
             <nav class="my-md">
-                <ul class="text-uppercase font-secondary flex justify-content-center gap-md text-muted">
+                <ul class="text-uppercase font-secondary flex justify-content-center gap-md text-muted letter-spacing">
                     <li><a href="#" class="text-black">Główna</a></li>
                     <li><a href="#">Koncept</a></li>
                     <li><a href="#">Nasze miejsca</a></li>
@@ -69,35 +70,39 @@
 
     <!-- Inspiring Sections -->
     <section data-aos="fade-right" data-aos-duration="1000" class="my-lg">
-        <div class="flex align-items-center inspiring-section">
-            <!-- Text -->
-            <div class="text-center">
-                <h2 class="h2">Twórca doświadczeń</h2>
-                <p class="text-muted">
-                    Wierzymy w bardziej autentyczny i w pełni spersonalizowany sposób podróżowania. Podróż zbudowana wokół Twoich pasji i pragnień, od najprostszych do najbardziej niezwykłych. Niezależnie od tego, czy jest to prosta inspiracja, czy prawdziwy plan podróży, wspólnie opracowujemy trasę, która naprawdę spełni Twoje oczekiwania.
-                </p>
-                <a href="#" class="btn btn-dark">Skomponujmy twoją podróż</a>
-            </div>
-            <!-- Image -->
-            <div>
-                <img src="{{ asset("img/tr1.jpg") }}" alt="Fotografia gór" width="1482" height="981">
+        <div class="container">
+            <div class="flex align-items-center inspiring-section">
+                <!-- Text -->
+                <div class="text-center">
+                    <h2 class="h2">Twórca doświadczeń</h2>
+                    <p class="text-muted">
+                        Wierzymy w bardziej autentyczny i w pełni spersonalizowany sposób podróżowania. Podróż zbudowana wokół Twoich pasji i pragnień, od najprostszych do najbardziej niezwykłych. Niezależnie od tego, czy jest to prosta inspiracja, czy prawdziwy plan podróży, wspólnie opracowujemy trasę, która naprawdę spełni Twoje oczekiwania.
+                    </p>
+                    <a href="#" class="btn btn-dark">Skomponujmy twoją podróż</a>
+                </div>
+                <!-- Image -->
+                <div>
+                    <img src="{{ asset("img/tr1.jpg") }}" alt="Fotografia gór" width="1482" height="981">
+                </div>
             </div>
         </div>
     </section>
 
     <section data-aos="fade-right" data-aos-duration="1000" class="my-lg">
-        <div class="flex align-items-center inspiring-section">
-            <!-- Image -->
-            <div>
-                <img src="{{ asset("img/tr2.jpg") }}" alt="Fotografia gór" width="1472" height="981">
-            </div>
-            <!-- Text -->
-            <div class="text-center">
-                <h2 class="h2">Blisko Ciebie</h2>
-                <p class="text-muted">
-                    Nasze biura podróży spotykają się z Tobą zgodnie z Twoją dostępnością, czasem i miejscem, które Ci odpowiada, aby porozmawiać w uprzywilejowanej i miłej chwili. Naszym pragnieniem jest doradzanie i towarzyszenie w tworzeniu Twojej podróży i aby każdy zachował wyjątkową pamięć o tym doświadczeniu.
-                </p>
-                <a href="#" class="btn btn-dark">Spotkajmy się</a>
+        <div class="container">
+            <div class="flex align-items-center inspiring-section">
+                <!-- Image -->
+                <div>
+                    <img src="{{ asset("img/tr2.jpg") }}" alt="Fotografia gór" width="1472" height="981">
+                </div>
+                <!-- Text -->
+                <div class="text-center">
+                    <h2 class="h2">Blisko Ciebie</h2>
+                    <p class="text-muted">
+                        Nasze biura podróży spotykają się z Tobą zgodnie z Twoją dostępnością, czasem i miejscem, które Ci odpowiada, aby porozmawiać w uprzywilejowanej i miłej chwili. Naszym pragnieniem jest doradzanie i towarzyszenie w tworzeniu Twojej podróży i aby każdy zachował wyjątkową pamięć o tym doświadczeniu.
+                    </p>
+                    <a href="#" class="btn btn-dark">Spotkajmy się</a>
+                </div>
             </div>
         </div>
     </section>
@@ -133,8 +138,8 @@
     <section class="my-lg">
         <div class="container">
             <div class="slider" slider-duration="4000">
-                <button class="prev"><i class="fas fa-chevron-left fa-2x"></i></button>
-                <button class="next"><i class="fas fa-chevron-right fa-2x"></i></button>
+                <button aria-label="Poprzedni slajd" class="prev"><i class="fas fa-chevron-left fa-2x"></i></button>
+                <button aria-label="Następny slajd" class="next"><i class="fas fa-chevron-right fa-2x"></i></button>
                 <div class="slide current" style="background-image:url('{{asset("img/s1.jpg")}}')"></div>
                 <div class="slide" style="background-image:url('{{asset("img/s2.jpg")}}')"></div>
                 <div class="slide" style="background-image:url('{{asset("img/s3.jpg")}}')"></div>
@@ -143,6 +148,56 @@
         </div>
     </section>
 
+    <!-- Blog entries -->
+    <section class="my-lg bg-light">
+        <div class="container text-center text-dark">
+            <h2 class="h2 py-lg">Ostatnie wieści</h2>
+            <p class="container-sm">Pomysły na podróże, wydarzenia, modne kierunki... na naszym blogu znajdziesz wszystkie nowości ze świata w ich oryginalnej wersji</p>
+        </div>
+
+        <div class="container py-lg">
+            <div class="entries">
+                <!-- First entry -->
+                <div class="entry">
+                    <div class="entry-img">
+                        <img src="{{ asset("img/s1.jpg") }}" alt="Zdjęcie wpisu">
+                    </div>
+                    <div class="entry-text">
+                        <h3 class="h3">Gdzie podróżować tego lata?</h3>
+                        <p>Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.</p>
+                    </div>
+                </div>
+
+                <!-- Second entry -->
+                <div class="entry">
+                    <div class="entry-img">
+                        <img src="{{ asset("img/s1.jpg") }}" alt="Zdjęcie wpisu">
+                    </div>
+                    <div class="entry-text">
+                        <h3 class="h3">Gdzie podróżować tego lata?</h3>
+                        <p>Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.</p>
+                    </div>
+                </div>
+
+                <!-- Third entry -->
+                <div class="entry">
+                    <div class="entry-img">
+                        <img src="{{ asset("img/s1.jpg") }}" alt="Zdjęcie wpisu">
+                    </div>
+                    <div class="entry-text">
+                        <h3 class="h3">Gdzie podróżować tego lata?</h3>
+                        <p>Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Read more -->
+            <div class="text-center py-lg my-lg">
+                <a href="#" class="btn btn-dark mx-auto">Odkryj nowości</a>
+            </div>
+        </div>
+
+    </section>
 
     <script src={{asset("js/anim.js")}}></script>
     <script src="{{ asset("js/slider.js") }}"></script>
