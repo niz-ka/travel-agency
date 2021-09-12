@@ -149,7 +149,7 @@
     </section>
 
     <!-- Blog entries -->
-    <section class="my-lg bg-light">
+    <section class="bg-light">
         <div class="container text-center text-dark">
             <h2 class="h2 py-lg">Ostatnie wieści</h2>
             <p class="container-sm">Pomysły na podróże, wydarzenia, modne kierunki... na naszym blogu znajdziesz wszystkie nowości ze świata w ich oryginalnej wersji</p>
@@ -196,8 +196,81 @@
                 <a href="#" class="btn btn-dark mx-auto">Odkryj nowości</a>
             </div>
         </div>
-
     </section>
+
+    <!-- Contact -->
+    <section class="bg-black">
+        <div class="container text-white">
+            <h2 class="h2 text-white text-center py-lg">Kontakt</h2>
+            <div class="flex py-lg justify-content-around">
+                <!-- Contact info -->
+                <div class="flex flex-column gap-md pb-md">
+                    <div class="flex align-items-center gap-md">
+                            <i class="fas fa-phone-alt fa-2x"></i>
+                        <div>
+                            <div class="h4 text-gold text-uppercase">Telefon</div>
+                            <div>600 400 300</div>
+                        </div>
+                    </div>
+
+                    <div class="flex align-items-center gap-md">
+                        <i class="fas fa-envelope fa-2x"></i>
+                        <div>
+                            <div class="h4 text-gold text-uppercase">E-mail</div>
+                            <div><a href="mailto:biuro@travel.io">biuro@travel.io</a></div>
+                        </div>
+                    </div>
+
+                    <div class="flex align-items-center gap-md">
+                        <i class="fas fa-map-marker-alt fa-2x"></i>
+                        <div>
+                            <div class="h4 text-gold text-uppercase">Adres</div>
+                            <address>
+                                ul. Podróżna 2a<br />
+                                00-009 Warszawa
+                            </address>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact form -->
+                <form action="#" method="POST" class="contact-form">
+                    <div>
+                        <label for="name">Imię i nazwisko</label>
+                        <input type="text" name="name" id="name" placeholder="Imię i nazwisko">
+                    </div>
+
+                    <div>
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email" id="email" placeholder="E-mail">
+                    </div>
+
+                    <div>
+                        <label for="tel">Telefon</label>
+                        <input type="text" name="tel" id="tel" placeholder="Telefon">
+                    </div>
+
+                    <div>
+                        <label for="message">Twoja wiadomość</label>
+                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Twoja wiadomość"></textarea>
+                    </div>
+
+                    <button class="btn btn-light mb-lg">Wyślij</button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark">
+        <div class="container flex justify-content-between align-items-center text-white py-lg">
+            <small>&copy; {{ date("Y") }} - Wszelkie prawa zastrzeżone </small>
+            <div class="flex gap-sm">
+                <i class="fab fa-facebook-square fa-2x"></i>
+                <i class="fab fa-instagram fa-2x"></i>
+            </div>
+        </div>
+    </footer>
 
     <script src={{asset("js/anim.js")}}></script>
     <script src="{{ asset("js/slider.js") }}"></script>

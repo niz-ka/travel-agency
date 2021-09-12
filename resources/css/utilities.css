@@ -6,6 +6,8 @@
     --font-primary: "Nunito", sans-serif;
     --font-secondary: "Oswald", sans-serif;
     --text-muted: rgba(0, 0, 0, 0.6);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Reset */
@@ -29,6 +31,10 @@ a {
     color: inherit;
 }
 
+address {
+    font-style: normal;
+}
+
 ul {
     list-style: none;
 }
@@ -44,6 +50,15 @@ button {
     border: 0;
     background: inherit;
     cursor: pointer;
+}
+
+input,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    color: inherit;
+    outline: none;
 }
 
 /* Containers */
@@ -69,6 +84,10 @@ button {
 /* Display */
 .flex {
     display: flex;
+}
+
+.gap-sm {
+    gap: 10px;
 }
 
 .gap-md {
@@ -99,6 +118,13 @@ button {
     margin-right: auto;
 }
 
+.mb-md {
+    margin-bottom: 10px;
+}
+
+.mb-lg {
+    margin-bottom: 20px;
+}
 /* Paddings */
 
 .py-md {
@@ -111,12 +137,24 @@ button {
     padding-bottom: 20px;
 }
 
+.pb-md {
+    padding-bottom: 10px;
+}
+
+.pb-lg {
+    padding-bottom: 20px;
+}
+
 .justify-content-center {
     justify-content: center;
 }
 
 .justify-content-between {
     justify-content: space-between;
+}
+
+.justify-content-around {
+    justify-content: space-around;
 }
 
 .align-items-center {
@@ -147,10 +185,6 @@ button {
 
 .text-black {
     color: #000;
-}
-
-.text-white {
-    color: #fff;
 }
 
 .text-dark {
@@ -201,6 +235,19 @@ button {
 .h3 {
     font-size: 1.5rem;
     letter-spacing: 0.07rem;
+}
+
+.h4 {
+    font-size: 1.2rem;
+    letter-spacing: 0.06rem;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.text-gold {
+    color: #dca57d;
 }
 
 /* Positions */
@@ -257,4 +304,8 @@ button {
 
 .bg-black {
     background-color: #000;
+}
+
+.bg-dark {
+    background-color: rgb(23, 23, 23);
 }

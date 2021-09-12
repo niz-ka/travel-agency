@@ -95,3 +95,31 @@ video {
 .slider .current {
     opacity: 1 !important;
 }
+
+/* Contact form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: #fff;
+}
+
+.contact-form label {
+    display: none;
+}
+
+.contact-form input {
+    height: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: rgba(99, 99, 99, 0.2);
+    width: 400px;
+    padding: 10px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1px solid white;
+}
