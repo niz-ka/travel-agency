@@ -30,8 +30,8 @@ video {
     text-align: justify;
 }
 
-/* Entries */
-.entries {
+/* Cards */
+.cards {
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -39,14 +39,14 @@ video {
     color: #333;
 }
 
-.entry {
+.card {
     background: #fff;
     padding: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     flex-basis: 1 1 auto;
 }
 
-.entry-img img {
+.card-img img {
     -o-object-fit: cover;
        object-fit: cover;
     max-height: 200px;
@@ -147,7 +147,7 @@ video {
     .inspiring-section,
     .concept .flex,
     nav .flex,
-    .entries,
+    .cards,
     .contact-section .flex {
         flex-direction: column !important;
     }

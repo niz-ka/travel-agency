@@ -152,7 +152,7 @@
         </div>
     </section>
 
-    <!-- Blog entries -->
+    <!-- Blog cards -->
     <section class="bg-light">
         <div class="container text-center text-dark">
             <h2 class="h2 py-lg">Ostatnie wieści</h2>
@@ -160,22 +160,22 @@
         </div>
 
         <div class="container py-lg">
-            <div class="entries">
-                <!-- First entry -->
+            <div class="cards">
+                <!-- First card -->
                 <x-blog-card>
                     <x-slot name="img">{{ asset("img/s1.jpg") }}</x-slot>
                     <x-slot name="title">Gdzie podróżować tego lata?</x-slot>
                     Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.
                 </x-blog-card>
 
-                <!-- Second entry -->
+                <!-- Second card -->
                  <x-blog-card>
                     <x-slot name="img">{{ asset("img/s1.jpg") }}</x-slot>
                     <x-slot name="title">Gdzie podróżować tego lata?</x-slot>
                     Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.
                 </x-blog-card>
 
-                <!-- Third entry -->
+                <!-- Third card -->
                  <x-blog-card>
                     <x-slot name="img">{{ asset("img/s1.jpg") }}</x-slot>
                     <x-slot name="title">Gdzie podróżować tego lata?</x-slot>
