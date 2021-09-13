@@ -3,6 +3,7 @@
     "/js/anim.js": "/js/anim.js",
     "/js/slider.js": "/js/slider.js",
     "/css/utilities.css": "/css/utilities.css",
+    "/css/tailwind.css": "/css/tailwind.css",
     "/css/app.css": "/css/app.css",
     "/css/font-awesome.css": "/css/font-awesome.css"
 }
