@@ -162,26 +162,20 @@
 
         <div class="container py-lg">
             <div class="cards">
-                <!-- First card -->
-                <x-blog-card>
-                    <x-slot name="img">{{ asset("img/s1.jpg") }}</x-slot>
-                    <x-slot name="title">Gdzie podróżować tego lata?</x-slot>
-                    Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.
-                </x-blog-card>
-
-                <!-- Second card -->
-                 <x-blog-card>
-                    <x-slot name="img">{{ asset("img/s1.jpg") }}</x-slot>
-                    <x-slot name="title">Gdzie podróżować tego lata?</x-slot>
-                    Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.
-                </x-blog-card>
-
-                <!-- Third card -->
-                 <x-blog-card>
-                    <x-slot name="img">{{ asset("img/s1.jpg") }}</x-slot>
-                    <x-slot name="title">Gdzie podróżować tego lata?</x-slot>
-                    Odkryj wszystkie miejsca, do których możesz podróżować tego lata bez kwarantanny. Szczepienia, testy PCR, godziny policyjne, granice… w tym biuletynie znajdziesz wszystkie kierunki otwarte tego lata i warunki podróży dla każdego z nich.
-                </x-blog-card>
+                @if (count($posts) > 0)
+                    @foreach ($posts as $post)
+                        <x-blog-card>
+                            <x-slot name="img">{{ $post->image }}</x-slot>
+                            <x-slot name="title">{{ $post->title }}</x-slot>
+                            <x-slot name="date">{{ $post->created_at->diffForHumans() }}</x-slot>
+                            <x-slot name="author">{{ $post->author->name }}</x-slot>
+                            <x-slot name="link">{{ route("posts.show", $post->slug) }}</x-slot>
+                            {{ Str::limit($post->content, 150, '...') }}
+                        </x-blog-card>
+                    @endforeach
+                @else
+                    <div>Aktualnie brak nowych wpisów. Koniecznie wróć później!</div>
+                 @endif
             </div>
 
             <!-- Read more -->

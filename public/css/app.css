@@ -44,11 +44,43 @@ video {
     color: #333;
 }
 
+.cards > * {
+    flex: 0 1 33%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
 .card {
     background: #fff;
     padding: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    flex-basis: 1 1 auto;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(0.95);
+}
+
+.card-text p {
+    margin-bottom: 30px;
+}
+
+.card-text .date,
+.card-text .author {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+}
+
+.card-text .date {
+    left: 0;
+}
+
+.card-text .author {
+    right: 0;
 }
 
 .card-img img {

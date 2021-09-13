@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/", function () {
-    return view("index");
-});
+Route::get("/", [MainController::class, "index"]);
+Route::resource("posty", PostController::class)
+    ->names([
+        "index" => "posts.index",
+        "create" => "posts.create",
+        "store" => "posts.store",
+        "show" => "posts.show",
+        "edit" => "posts.edit",
+        "update" => "posts.update",
+        "destroy" => "posts.destroy",
+    ])
+    ->parameters([
+        "posty" => "post",
+    ]);
 
 Route::get("/dashboard", function () {
     return view("dashboard");
