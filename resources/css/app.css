@@ -177,13 +177,25 @@ video {
     display: block !important;
 }
 
+/* Back to top */
+.top-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 200;
+    cursor: pointer;
+    color: #dca57d;
+}
+
 /* Meida */
 @media (max-width: 900px) {
     .inspiring-section,
     .concept .flex,
     nav .flex,
     .cards,
-    .contact-section .flex {
+    .contact-section .flex,
+    .post-show.flex {
         flex-direction: column !important;
     }
 
@@ -208,11 +220,17 @@ video {
         letter-spacing: 0.1rem;
     }
 
+    .header + * {
+        margin-top: 81px;
+    }
+
     .header {
         position: fixed;
         background: #fff;
         width: 100%;
         z-index: 100;
+        top: 0;
+        left: 0;
     }
 
     .header .container {
@@ -236,7 +254,7 @@ video {
     }
 
     .header img {
-        width: 100px;
+        width: 150px;
         height: 40px;
     }
 }

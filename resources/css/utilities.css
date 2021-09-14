@@ -8,7 +8,6 @@
     --text-muted: rgba(0, 0, 0, 0.6);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    scroll-behavior: smooth;
 }
 
 /* Reset */
@@ -130,6 +129,14 @@ textarea {
 .mb-lg {
     margin-bottom: 20px;
 }
+
+.mt-md {
+    margin-top: 10px;
+}
+
+.mt-lg {
+    margin-top: 20px;
+}
 /* Paddings */
 
 .py-md {
@@ -155,6 +162,14 @@ textarea {
     padding-bottom: 20px;
 }
 
+.pt-md {
+    padding-top: 10px;
+}
+
+.pt-lg {
+    padding-top: 20px;
+}
+
 .justify-content-center {
     justify-content: center;
 }
@@ -175,6 +190,14 @@ textarea {
 
 .text-center {
     text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify;
 }
 
 .font-primary {
@@ -316,4 +339,25 @@ textarea {
 
 .bg-dark {
     background-color: rgb(23, 23, 23);
+}
+
+.border-bottom {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.line-after::after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 3px;
+    background-color: #dca57d;
+    margin: 20px 0;
+}
+
+.min-width-30 {
+    min-width: 30%;
+}
+
+.block {
+    display: block;
 }
