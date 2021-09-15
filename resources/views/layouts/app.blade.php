@@ -13,10 +13,12 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}">
 
+        {{ $dependencies ?? "" }}
+
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-gray-100">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 

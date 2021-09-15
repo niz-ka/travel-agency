@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -30,9 +31,7 @@ Route::resource("posty", PostController::class)
         "posty" => "post",
     ]);
 
-Route::get("/dashboard", function () {
-    return view("dashboard");
-})
+Route::get("/dashboard", [DashboardController::class, "index"])
     ->middleware(["auth"])
     ->name("dashboard");
 

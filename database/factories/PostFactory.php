@@ -27,7 +27,7 @@ class PostFactory extends Factory
             "slug" => $this->faker->slug(),
             "content" => $this->faker->realText(5000),
             "image" => $this->faker->imageUrl(rand(400, 640), rand(300, 480)),
-            "user_id" => User::factory(),
+            "user_id" => 1,
         ];
     }
 }

@@ -182,7 +182,7 @@ video {
     display: none;
     position: fixed;
     bottom: 20px;
-    right: 30px;
+    right: 10px;
     z-index: 200;
     cursor: pointer;
     color: #dca57d;
