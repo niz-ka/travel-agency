@@ -16,6 +16,7 @@ class MainController extends Controller
     {
         return view("index", [
             "posts" => Post::limit(3)
+                ->latest()
                 ->with("author")
                 ->get(),
         ]);

@@ -1,7 +1,7 @@
 <a href="{{ $link }}">
     <div class="card">
         <div class="card-img">
-            <img src="{{ $img }}" alt="">
+            <img src="{{ asset("storage") ."/". $img }}" alt="">
         </div>
         <div class="card-text">
             <h3 class="h3 my-md">{{ $title }}</h3>

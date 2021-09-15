@@ -21,17 +21,18 @@
 
         @if(count($posts) > 0)
                 @foreach ($posts as $post)
-                    <div class="bg-white rounded-xl p-4 shadow-md flex items-center justify-between gap-8 mb-12">
-                        <div class="w-64 h-32">
-                            <img src="{{ $post->image }}" alt="" class="w-full h-full object-cover rounded-xl" />
+                    <div class="bg-white rounded-xl p-4 shadow-md flex flex-col md:flex-row items-center justify-between gap-8 mb-12 mx-4">
+                        <div class="md:w-32 md:h-32 md:mx-0 max-w-xs mx-auto">
+                            <img src="{{ asset("storage") ."/". $post->image }}" alt="" class="max-w-full h-auto md:w-full md:h-full object-cover rounded-xl" />
                         </div>
-                        <div>
+                        <div class="w-full md:w-auto flex-1">
                             <h3 class="font-bold text-xl">{{ $post->title }}</h3>
-                            <p class="mt-5 text-justify">{{ Str::limit($post->content, 200, '...') }}</p>
+                            <p class="mt-2 text-justify">{{ strip_tags(Str::limit($post->content, 200, '...')) }}</p>
                             <small class="text-gray-600 block mt-2">Opublikowano {{ $post->created_at->diffForHumans() }}</small>
                         </div>
-                        <div>
-                            <a href="#" class="bg-indigo-500 text-white p-3 rounded-lg hover:bg-indigo-600 block mb-6 text-center">Edytuj</a>
+                        <div class="w-full md:w-auto">
+                            <a href="{{ route("posts.edit", $post) }}" class="bg-indigo-500 text-white p-3 rounded-lg hover:bg-indigo-600 block mb-6 text-center">Edytuj</a>
+
                             <form action="{{ route("posts.destroy", $post) }}" method="POST">
                                 @method("DELETE")
                                 @csrf

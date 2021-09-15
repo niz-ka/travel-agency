@@ -9,10 +9,11 @@
                 <small class="px-md text-muted">Przez {{ $post->author->name }}</small>
             </div>
             <div class="mt-lg">
-                <img src="{{ $post->image }}" alt="" class="mx-auto"/>
+                <img src="{{ asset("storage") ."/". $post->image }}" alt="" class="mx-auto"/>
             </div>
             <div class="text-justify py-lg">
-                <p>{{ $post->content }}</p>
+                {{-- Safe ?? --}}
+                <p>{!! $post->content !!}</p>
             </div>
         </main>
 

@@ -147,5 +147,9 @@ return [
             "rule-name" => "custom-message",
         ],
     ],
-    "attributes" => [],
+    "attributes" => [
+        "title" => "tytuł",
+        "content" => "treść",
+        "image" => "zdjęcie",
+    ],
 ];

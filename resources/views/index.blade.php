@@ -3,6 +3,7 @@
     <section class="background-video">
             <div class="video-wrapper">
                 <video class="background-video" playsinline autoplay muted loop poster="{{asset("img/video.jpg")}}" preload="none" role="presentation">
+                    <source src="{{ asset("video/background_video.webm") }}" type="video/webm">
                     <source src="{{ asset("video/background_video.mp4") }}" type="video/mp4">
                 </video>
 
@@ -114,7 +115,7 @@
                             <x-slot name="date">{{ $post->created_at->diffForHumans() }}</x-slot>
                             <x-slot name="author">{{ $post->author->name }}</x-slot>
                             <x-slot name="link">{{ route("posts.show", $post->slug) }}</x-slot>
-                            {{ Str::limit($post->content, 150, '...') }}
+                            {{ strip_tags(Str::limit($post->content, 150, '...')) }}
                         </x-blog-card>
                     @endforeach
                 @else
