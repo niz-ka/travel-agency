@@ -13,7 +13,7 @@
     <div class="mx-auto mt-12 max-w-4xl">
 
         @if(session("status"))
-            <div class="mb-12 bg-green-300 p-4 rounded-xl text-green-900 font-bold">
+            <div class="mx-4 mb-12 bg-green-300 p-4 rounded-xl text-green-900 font-bold">
                 <i class="fas fa-check"></i>
                 {{ session("status") }}
             </div>
@@ -45,7 +45,7 @@
                     {{ $posts->links() }}
                 </div>
         @else
-            <div class="bg-white shadow-md p-4 rounded-xl flex items-center">
+            <div class="mx-4 bg-white shadow-md p-4 rounded-xl flex items-center">
                 <i class="far fa-frown-open mr-2 fa-2x"></i>
                 <span>Aktualnie nie posiadasz żadnych wpisów.</span>
                 <a href="{{ route("posts.create") }}" class="bg-green-500 text-white p-2 rounded-lg hover:bg-green-600 block text-center ml-auto">

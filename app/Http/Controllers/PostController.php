@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class PostController extends Controller
 {
@@ -56,7 +58,7 @@ class PostController extends Controller
 
         $path = $request->hasFile("image")
             ? $request->file("image")->store("images", "public")
-            : "images/no_entry_image.jpg";
+            : Post::DEFAULT_IMAGE_PATH;
 
         Post::create([
             "title" => $request->title,
@@ -110,6 +112,39 @@ class PostController extends Controller
         if (!Gate::allows("post-owner", $post)) {
             abort(403);
         }
+
+        $request->validate([
+            "title" => [
+                "required",
+                Rule::unique("posts")->ignore($post->id),
+                "max:290",
+            ],
+            "content" => ["required"],
+            "image" => ["image", "max:1999"],
+        ]);
+
+        if ($request->hasFile("image")) {
+            $path = $request->file("image")->store("images", "public");
+            // Delete previous non-default image
+            if ($post->image !== Post::DEFAULT_IMAGE_PATH) {
+                Storage::disk("public")->delete($post->image);
+            }
+        } else {
+            $path = $post->image;
+        }
+
+        Post::where("id", $post->id)->update([
+            "title" => $request->title,
+            "slug" => Str::slug($request->title),
+            "content" => $request->content,
+            "image" => $path,
+            "user_id" => $request->user()->id,
+        ]);
+
+        return redirect(route("dashboard"))->with(
+            "status",
+            "Pomyślnie edytowano wpis"
+        );
     }
 
     /**
@@ -122,6 +157,11 @@ class PostController extends Controller
     {
         if (!Gate::allows("post-owner", $post)) {
             abort(403);
+        }
+
+        // Delete previous non-default image
+        if ($post->image !== Post::DEFAULT_IMAGE_PATH) {
+            Storage::disk("public")->delete($post->image);
         }
 
         $post->delete();

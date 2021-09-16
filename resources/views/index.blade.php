@@ -115,7 +115,7 @@
                             <x-slot name="date">{{ $post->created_at->diffForHumans() }}</x-slot>
                             <x-slot name="author">{{ $post->author->name }}</x-slot>
                             <x-slot name="link">{{ route("posts.show", $post->slug) }}</x-slot>
-                            {{ strip_tags(Str::limit($post->content, 150, '...')) }}
+                            {{ strip_tags(Str::limit($post->content, 200, '...')) }}
                         </x-blog-card>
                     @endforeach
                 @else
