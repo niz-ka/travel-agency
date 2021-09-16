@@ -2,3 +2,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&family=Oswald:wght@300;400;500&display=swap");
+
+.font-primary {
+    font-family: "Nunito", sans-serif;
+}
+
+.font-secondary {
+    font-family: "Oswald", sans-serif;
+}
+
+.bg-dark {
+    background-color: rgb(23, 23, 23);
+}
+
+.text-accent {
+    color: #dca57d;
+}

@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&family=Oswald:wght@300;400;500&display=swap);
 /* ./resources/css/app.css */
 
 /* ! tailwindcss v2.2.15 | MIT License | https://tailwindcss.com */
@@ -32136,6 +32137,22 @@ select {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.font-primary {
+  font-family: "Nunito", sans-serif;
+}
+
+.font-secondary {
+  font-family: "Oswald", sans-serif;
+}
+
+.bg-dark {
+  background-color: rgb(23, 23, 23);
+}
+
+.text-accent {
+  color: #dca57d;
 }
 
 @media (min-width: 640px) {

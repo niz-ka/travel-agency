@@ -8,8 +8,9 @@
         <title>{{ config("app.name") }} - Biuro Podróży</title>
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset("css/utilities.css") }}">
-        <link rel="stylesheet" href="{{ asset("css/app.css") }}">
+        {{-- <link rel="stylesheet" href="{{ asset("css/utilities.css") }}">
+        <link rel="stylesheet" href="{{ asset("css/app.css") }}"> --}}
+        <link rel="stylesheet" href="{{ asset("css/tailwind.css") }}">
 
         <!-- Font awesome -->
         <link rel="stylesheet" href="{{ asset("css/font-awesome.css") }}">
@@ -35,12 +36,26 @@
     </head>
 
 <body class="font-primary">
-
     <!-- Header -->
-    <header class="header border-bottom py-md">
+    <header>
+        <div class="my-3">
+            <img src="{{ asset("img/logo.png") }}" alt="Logo travel.io" class="mx-auto" />
+            <button class="hidden" aria-label="Przycisk nawigacji"><i class="fas fa-bars fa-2x"></i></button>
+            <nav class="my-5">
+                <ul class="uppercase flex gap-4 justify-center font-secondary tracking-widest text-gray-600">
+                    <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#dlaczego-my" }}">Dlaczego my?</a></li>
+                    <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#nasz-koncept" }}">Koncept</a></li>
+                    <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#aktualnosci" }}">Aktualności</a></li>
+                    <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#kontakt" }}">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    {{-- <header class="border-b border-gray-400">
         <div class="container position-relative">
             <div class="flex align-items-center justify-content-between">
-                <button class="nav-button" aria-label="Przycisk nawigacji"><i class="fas fa-bars fa-2x"></i></button>
+                <button class="hidden" aria-label="Przycisk nawigacji"><i class="fas fa-bars fa-2x"></i></button>
                 <div class="logo my-md mx-auto">
                     <a href="{{ route("index") }}">
                         <img src="{{ asset("img/logo.png") }}" alt="Logo travel.io" width="300" height="80" class="mx-auto">
@@ -56,23 +71,23 @@
                 </ul>
             </nav>
         </div>
-    </header>
+    </header>  --}}
 
     <!-- Content -->
     {{ $slot }}
 
     <!-- Footer -->
     <footer class="bg-dark">
-        <div class="container flex justify-content-between align-items-center text-white py-lg">
+        <div class="container mx-auto text-white flex justify-between items-center p-3">
             <small>&copy; {{ date("Y") }} - Wszelkie prawa zastrzeżone </small>
-            <div class="flex gap-sm">
+            <div class="flex gap-3">
                 <i class="fab fa-facebook-square fa-2x"></i>
                 <i class="fab fa-instagram fa-2x"></i>
             </div>
         </div>
     </footer>
 
-    <button class="top-button" title="Idź do góry"><i class="fas fa-arrow-circle-up fa-3x"></i></button>
+    <button class="fixed text-accent right-4 bottom-4" title="Idź do góry"><i class="fas fa-arrow-circle-up fa-3x"></i></button>
 
     <script>
         const topButton = document.querySelector(".top-button");
