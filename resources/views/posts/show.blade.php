@@ -11,9 +11,8 @@
             <div class="my-6">
                 <img src="{{ asset("storage") ."/". $post->image }}" alt="" class="object-cover w-full" style="max-height: 30rem;" />
             </div>
-            <div class="section-paragraph text-justify">
-                {{-- Safe ?? --}}
-                {!! $post->content !!}
+            <div class="section-paragraph text-justify post">
+                {!! clean($post->content) !!}
             </div>
         </main>
 

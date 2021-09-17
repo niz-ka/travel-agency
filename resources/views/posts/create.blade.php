@@ -57,7 +57,11 @@
     <x-slot name="javascript">
         <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
         <script>
-            CKEDITOR.replace( 'content' );
+            ClassicEditor
+            .create(document.querySelector('#content') )
+            .catch(error => {
+                console.error( error );
+            } );
         </script>
     </x-slot>
 

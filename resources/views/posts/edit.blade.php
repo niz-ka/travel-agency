@@ -31,14 +31,18 @@
 
                 <div>
                     <label for="content" class="block mb-2">Treść</label>
-                    <textarea id="content" name="content">{{ $post->content }}</textarea>
+                    <div class="post">
+                        <textarea id="content" name="content">
+                            {{ $post->content }}
+                        </textarea>
+                    <div>
 
                     @error("content")
                         <div class="text-red-500 mt-2">{{ $message }}</div>
                     @enderror
                 </div>
 
-                <div>
+                <div class="mt-6">
                     <img src="{{ asset("storage") . "/" . $post->image }}" alt="" class="w-32 h-32 object-cover rounded-md mb-4" />
                     <label for="image" class="block mb-2">Zdjęcie</label>
                     <input type="file" name="image" id="image" class="cursor-pointer">
@@ -59,7 +63,11 @@
     <x-slot name="javascript">
         <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
         <script>
-            CKEDITOR.replace( 'content' );
+            ClassicEditor
+            .create(document.querySelector('#content') )
+            .catch(error => {
+                console.error( error );
+            } );
         </script>
     </x-slot>
 

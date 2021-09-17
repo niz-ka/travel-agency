@@ -4,7 +4,7 @@
     </div>
     <div class="flex flex-col p-3 h-full">
         <h3 class="section-subheading">{{ $title }}</h3>
-        <p class="section-paragraph">{{ $slot }}</p>
+        <div class="section-paragraph">{!! $slot !!}</div>
         <div class="mt-4 flex justify-between h-full items-end">
             <small>{{ $date }}</small>
             <small>Przez {{ $author }}</small>

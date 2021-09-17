@@ -15,7 +15,7 @@
         </div>
     </section>
 
-    <x-inspiring-section>
+    <x-inspiring-section id="dlaczego-my">
         <x-slot name="textFlexOrder">order-0</x-slot>
         <x-slot name="heading">Twórca doświadczeń</x-slot>
         <x-slot name="imagePath">{{ asset("img/tr1.jpg") }}</x-slot>
@@ -101,11 +101,11 @@
                             <x-slot name="date">{{ $post->created_at->diffForHumans() }}</x-slot>
                             <x-slot name="author">{{ $post->author->name }}</x-slot>
                             <x-slot name="link">{{ route("posts.show", $post->slug) }}</x-slot>
-                            {{ strip_tags(Str::limit($post->content, 200, '...')) }}
+                            {!! clean(strip_tags(Str::limit($post->content, 200, '...'))) !!}
                         </x-blog-card>
                     @endforeach
                 @else
-                    <div>Aktualnie brak nowych wpisów. Koniecznie wróć później!</div>
+                    <div class="mx-auto">Aktualnie brak nowych wpisów. Koniecznie wróć później!</div>
                  @endif
             </div>
 

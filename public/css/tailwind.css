@@ -32332,7 +32332,7 @@ select {
   font-family: "Oswald", sans-serif;
 }
 
-.section-subheading {
+.section-subheading, .post h2 {
   margin-bottom: 1rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -32342,7 +32342,27 @@ select {
   font-family: "Oswald", sans-serif;
 }
 
-.section-paragraph {
+.post h3 {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: "Oswald", sans-serif;
+}
+
+.post h4 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: "Oswald", sans-serif;
+}
+
+.section-paragraph, .post p {
   font-size: 1.125rem;
   line-height: 1.75rem;
   line-height: 1.625;
@@ -32360,6 +32380,28 @@ select {
   background: #dca57d;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.post a {
+  text-decoration: underline;
+  color: blue;
+}
+
+.post ul {
+  list-style: disc inside;
+}
+
+.post ol {
+  list-style: decimal inside;
+}
+
+.post p {
+  text-align: justify;
+}
+
+.post table,
+.post td {
+  border: 1px solid #333;
 }
 
 @media (min-width: 640px) {

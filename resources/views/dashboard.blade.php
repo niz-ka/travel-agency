@@ -27,7 +27,7 @@
                         </div>
                         <div class="w-full md:w-auto flex-1">
                             <h3 class="font-bold text-xl">{{ $post->title }}</h3>
-                            <p class="mt-2 text-justify">{{ strip_tags(Str::limit($post->content, 200, '...')) }}</p>
+                            <div class="mt-2 text-justify">{!! clean(strip_tags(Str::limit($post->content, 200, '...'))) !!}</div>
                             <small class="text-gray-600 block mt-2">Opublikowano {{ $post->created_at->diffForHumans() }}</small>
                         </div>
                         <div class="w-full md:w-auto">

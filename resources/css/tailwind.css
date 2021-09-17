@@ -55,11 +55,21 @@
     @apply mb-4 uppercase font-secondary text-3xl font-medium tracking-wider;
 }
 
-.section-subheading {
+.section-subheading,
+.post h2 {
     @apply mb-4 uppercase font-secondary text-xl font-medium tracking-wider;
 }
 
-.section-paragraph {
+.post h3 {
+    @apply mb-4 uppercase font-secondary text-lg font-medium tracking-wider;
+}
+
+.post h4 {
+    @apply mb-4 uppercase font-secondary text-base font-medium tracking-wider;
+}
+
+.section-paragraph,
+.post p {
     @apply leading-relaxed text-lg;
 }
 
@@ -74,4 +84,26 @@
     width: 150px;
     background: #dca57d;
     @apply my-4;
+}
+
+.post a {
+    text-decoration: underline;
+    color: blue;
+}
+
+.post ul {
+    list-style: disc inside;
+}
+
+.post ol {
+    list-style: decimal inside;
+}
+
+.post p {
+    text-align: justify;
+}
+
+.post table,
+.post td {
+    border: 1px solid #333;
 }
