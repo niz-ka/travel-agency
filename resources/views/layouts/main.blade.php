@@ -37,19 +37,19 @@
 
 <body class="font-primary">
     <!-- Header -->
-    <header>
-        <div class="my-3">
-            <img src="{{ asset("img/logo.png") }}" alt="Logo travel.io" class="mx-auto" />
-            <button class="hidden" aria-label="Przycisk nawigacji"><i class="fas fa-bars fa-2x"></i></button>
-            <nav class="my-5">
-                <ul class="uppercase flex gap-4 justify-center font-secondary tracking-widest text-gray-600">
-                    <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#dlaczego-my" }}">Dlaczego my?</a></li>
-                    <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#nasz-koncept" }}">Koncept</a></li>
-                    <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#aktualnosci" }}">Aktualności</a></li>
-                    <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#kontakt" }}">Kontakt</a></li>
-                </ul>
-            </nav>
+    <header class="py-2 sticky top-0 left-0 lg:static w-full bg-white z-50 border-b-2">
+        <div class="lg:my-3 flex items-center lg:block relative h-12 lg:h-auto">
+            <button id="nav-button" class="lg:hidden pl-3" aria-label="Przycisk nawigacji"><i class="fas fa-bars fa-2x"></i></button>
+            <img src="{{ asset("img/logo.png") }}" alt="Logo travel.io" class="mx-auto h-12 w-auto lg:h-auto absolute top-0 left-1/2 transform -translate-x-1/2 lg:static lg:transform-none" />
         </div>
+        <nav class="lg:my-4 hidden lg:block relative z-30 bg-white">
+            <ul class="pb-2 lg:pb-0 absolute top-0 left-0 w-full lg:static bg-white pt-4 lg:pt-0 pl-3 lg:pl-0 uppercase flex flex-col lg:flex-row gap-4 justify-center font-secondary tracking-widest text-gray-600">
+                <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#dlaczego-my" }}">Dlaczego my?</a></li>
+                <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#nasz-koncept" }}">Koncept</a></li>
+                <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#aktualnosci" }}">Aktualności</a></li>
+                <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#kontakt" }}">Kontakt</a></li>
+            </ul>
+        </nav>
     </header>
 
     {{-- <header class="border-b border-gray-400">
@@ -87,13 +87,16 @@
         </div>
     </footer>
 
-    <button class="fixed text-accent right-4 bottom-4" title="Idź do góry"><i class="fas fa-arrow-circle-up fa-3x"></i></button>
+    <button id="top-button" class="fixed text-accent right-4 bottom-4 text-3xl" title="Idź do góry"><i class="fas fa-arrow-circle-up"></i></button>
 
+
+
+    <!-- JavaScript -->
     <script>
-        const topButton = document.querySelector(".top-button");
+        const topButton = document.querySelector("#top-button");
 
-        document.querySelector(".nav-button").addEventListener("click", () => {
-            document.querySelector(".header nav").classList.toggle("show");
+        document.querySelector("#nav-button").addEventListener("click", () => {
+            document.querySelector("header nav").classList.toggle("hidden");
         });
 
         topButton.addEventListener("click", () => {
@@ -111,7 +114,6 @@
 
     </script>
 
-    <!-- JavaScript -->
     {{ $javascript ?? '' }}
 </body>
 </html>

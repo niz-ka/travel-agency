@@ -5,6 +5,16 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&family=Oswald:wght@300;400;500&display=swap");
 
+@variants group-hover, hover, focus {
+    .border-accent {
+        border: 1px solid #dca57d;
+    }
+}
+
+.form-input {
+    @apply bg-dark border border-black outline-none ring-0 focus:ring-0 focus:border-accent w-full;
+}
+
 .font-primary {
     font-family: "Nunito", sans-serif;
 }
@@ -17,6 +27,51 @@
     background-color: rgb(23, 23, 23);
 }
 
+.text-dark {
+    color: #333;
+}
+
 .text-accent {
     color: #dca57d;
+}
+
+.outline-accent {
+    outline: 1px solid #dca57d;
+}
+
+.tracking-ultra {
+    letter-spacing: 0.2em;
+}
+
+.btn-white {
+    @apply border-4 font-secondary uppercase tracking-ultra py-1 px-4 font-medium hover:tracking-widest transition-all duration-300 ease-in-out hover:bg-opacity-20 hover:bg-white;
+}
+
+.btn-black {
+    @apply border-4 border-black font-secondary uppercase tracking-ultra py-1 px-4 font-medium hover:tracking-widest transition-all duration-300 ease-in-out hover:bg-opacity-20 hover:bg-black;
+}
+
+.section-heading {
+    @apply mb-4 uppercase font-secondary text-3xl font-medium tracking-wider;
+}
+
+.section-subheading {
+    @apply mb-4 uppercase font-secondary text-xl font-medium tracking-wider;
+}
+
+.section-paragraph {
+    @apply leading-relaxed text-lg;
+}
+
+.current {
+    opacity: 1 !important;
+}
+
+.line-after::after {
+    display: block;
+    content: "";
+    height: 3px;
+    width: 150px;
+    background: #dca57d;
+    @apply my-4;
 }
