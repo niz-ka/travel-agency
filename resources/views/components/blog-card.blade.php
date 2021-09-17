@@ -1,4 +1,4 @@
-<a href="{{ $link }}" class="flex-1 bg-white shadow-md flex flex-col hover:scale-95 duration-300 transition transform">
+<a href="{{ $link }}" class="lg:w-1/3 bg-white shadow-md flex flex-col hover:scale-95 duration-300 transition transform">
     <div>
         <img class="w-full h-56 object-cover" src="{{ asset("storage") ."/". $img }}" alt="">
     </div>
