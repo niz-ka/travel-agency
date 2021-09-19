@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MailSender;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class MainController extends Controller
 {
@@ -20,6 +22,35 @@ class MainController extends Controller
                 ->with("author")
                 ->get(),
         ]);
+    }
+
+    public function sendMail(Request $request)
+    {
+        // Check honeypot (name: user_data)
+        if ($request->input("user_data")) {
+            return;
+        }
+
+        $request->validate([
+            "fullName" => "required|string|max:80",
+            "email" => "required|email|max:80",
+            "tel" => "required|max:20|string",
+            "content" => "required|max:2000|string",
+        ]);
+
+        Mail::to(\env("MAIL_FROM_ADDRESS", "office@travel.io"))->send(
+            new MailSender(
+                $request->input("fullName"),
+                $request->input("email"),
+                $request->input("tel"),
+                $request->input("content")
+            )
+        );
+
+        return \redirect(route("index") . "#contact")->with(
+            "status",
+            "Twój e-mail został wysłany!"
+        );
     }
 
     /**

@@ -8,8 +8,6 @@
         <title>{{ config("app.name") }} - Biuro Podróży</title>
 
         <!-- Styles -->
-        {{-- <link rel="stylesheet" href="{{ asset("css/utilities.css") }}">
-        <link rel="stylesheet" href="{{ asset("css/app.css") }}"> --}}
         <link rel="stylesheet" href="{{ asset("css/tailwind.css") }}">
 
         <!-- Font awesome -->

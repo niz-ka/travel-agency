@@ -151,5 +151,9 @@ return [
         "title" => "tytuł",
         "content" => "treść",
         "image" => "zdjęcie",
+        "tel" => "telefon",
+        "fullName" => "imię i nazwisko",
+        "message" => "wiadomość",
+        "email" => "e-mail",
     ],
 ];

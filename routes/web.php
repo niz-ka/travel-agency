@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/", [MainController::class, "index"])->name("index");
+Route::post("/", [MainController::class, "sendMail"])->name("mailSender");
+
 Route::resource("posty", PostController::class)
     ->names([
         "index" => "posts.index",

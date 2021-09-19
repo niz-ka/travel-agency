@@ -116,7 +116,7 @@
         </div>
     </section>
 
-    <section class="bg-black pb-6">
+    <section class="bg-black pb-6" id="contact">
         <div class="container mx-auto text-white">
             <h2 class="section-heading text-center py-8">Kontakt</h2>
             <div class="flex flex-col items-center lg:flex-row lg:items-start justify-around gap-8">
@@ -151,26 +151,51 @@
                 </div>
                 <!-- Contact form -->
                 <div class=" max-w-sm flex-1">
-                    <form action="#" method="POST" class="flex flex-col gap-4 w-full">
+
+                    @if(session("status"))
+                    <div>{{ session("status") }}</div>
+                    @endif
+
+                    <form action="{{ route("mailSender") . "#contact" }}" method="POST" class="flex flex-col gap-4 w-full">
                         @csrf
                         <div>
-                            <label for="name" class="hidden">Imię i nazwisko</label>
-                            <input type="text" name="name" id="name" placeholder="Imię i nazwisko" class="form-input">
+                            <label for="fullName" class="hidden">Imię i nazwisko</label>
+                            <input type="text" name="fullName" id="fullName" placeholder="Imię i nazwisko" class="form-input">
+
+                            @error("fullName")
+                                <div>{{ $message }}</div>
+                            @enderror
                         </div>
+
+                        {{-- Honeypot --}}
+                        <input type="hidden" name="user_data">
 
                         <div>
                             <label for="email" class="hidden">E-mail</label>
                             <input type="text" name="email" id="email" placeholder="E-mail" class="form-input">
+
+                            @error("email")
+                                <div>{{ $message }}</div>
+                            @enderror
                         </div>
+
 
                         <div>
                             <label for="tel" class="hidden">Telefon</label>
                             <input type="text" name="tel" id="tel" placeholder="Telefon" class="form-input">
+
+                            @error("tel")
+                                <div>{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div>
-                            <label for="message" class="hidden">Twoja wiadomość</label>
-                            <textarea name="message" id="message" cols="30" rows="10" placeholder="Twoja wiadomość" class="form-input"></textarea>
+                            <label for="content" class="hidden">Twoja wiadomość</label>
+                            <textarea name="content" id="content" cols="30" rows="10" placeholder="Twoja wiadomość" class="form-input"></textarea>
+
+                            @error("content")
+                                <div>{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <button class="btn-white w-full">Wyślij</button>
@@ -179,69 +204,6 @@
             </div>
         </div>
     </section>
-
-    {{-- <!-- Contact -->
-    <section class="bg-black contact-section" id="kontakt">
-        <div class="container text-white">
-            <h2 class="h2 text-white text-center py-lg mb-lg">Kontakt</h2>
-            <div class="flex py-lg justify-content-around gap-lg">
-                <!-- Contact info -->
-                <div class="flex flex-column gap-lg">
-                    <div class="flex align-items-center gap-md">
-                            <i class="fas fa-phone-alt fa-2x"></i>
-                        <div>
-                            <div class="h4 text-gold text-uppercase">Telefon</div>
-                            <div>600 400 300</div>
-                        </div>
-                    </div>
-
-                    <div class="flex align-items-center gap-md">
-                        <i class="fas fa-envelope fa-2x"></i>
-                        <div>
-                            <div class="h4 text-gold text-uppercase">E-mail</div>
-                            <div><a href="mailto:biuro@travel.io">biuro@travel.io</a></div>
-                        </div>
-                    </div>
-
-                    <div class="flex align-items-center gap-md">
-                        <i class="fas fa-map-marker-alt fa-2x"></i>
-                        <div>
-                            <div class="h4 text-gold text-uppercase">Adres</div>
-                            <address>
-                                ul. Podróżna 2a<br />
-                                00-009 Warszawa
-                            </address>
-                        </div>
-                    </div>
-                </div>
-                <!-- Contact form -->
-                <form action="#" method="POST" class="contact-form">
-                    <div>
-                        <label for="name">Imię i nazwisko</label>
-                        <input type="text" name="name" id="name" placeholder="Imię i nazwisko">
-                    </div>
-
-                    <div>
-                        <label for="email">E-mail</label>
-                        <input type="text" name="email" id="email" placeholder="E-mail">
-                    </div>
-
-                    <div>
-                        <label for="tel">Telefon</label>
-                        <input type="text" name="tel" id="tel" placeholder="Telefon">
-                    </div>
-
-                    <div>
-                        <label for="message">Twoja wiadomość</label>
-                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Twoja wiadomość"></textarea>
-                    </div>
-
-                    <button class="btn btn-light mb-lg">Wyślij</button>
-
-                </form>
-            </div>
-        </div>
-    </section> --}}
 
     <x-slot name="javascript">
         <script src={{asset("js/anim.js")}}></script>
