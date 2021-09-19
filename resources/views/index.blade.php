@@ -153,7 +153,7 @@
                 <div class=" max-w-sm flex-1">
 
                     @if(session("status"))
-                    <div>{{ session("status") }}</div>
+                    <div class="mb-3 uppercase font-secondary tracking-widest text-green-600">{{ session("status") }}</div>
                     @endif
 
                     <form action="{{ route("mailSender") . "#contact" }}" method="POST" class="flex flex-col gap-4 w-full">
@@ -163,7 +163,7 @@
                             <input type="text" name="fullName" id="fullName" placeholder="Imię i nazwisko" class="form-input">
 
                             @error("fullName")
-                                <div>{{ $message }}</div>
+                                <div class="text-red-500">{{ $message }}</div>
                             @enderror
                         </div>
 
@@ -175,7 +175,7 @@
                             <input type="text" name="email" id="email" placeholder="E-mail" class="form-input">
 
                             @error("email")
-                                <div>{{ $message }}</div>
+                               <div class="text-red-500">{{ $message }}</div>
                             @enderror
                         </div>
 
@@ -185,7 +185,7 @@
                             <input type="text" name="tel" id="tel" placeholder="Telefon" class="form-input">
 
                             @error("tel")
-                                <div>{{ $message }}</div>
+                                <div class="text-red-500">{{ $message }}</div>
                             @enderror
                         </div>
 
@@ -194,7 +194,7 @@
                             <textarea name="content" id="content" cols="30" rows="10" placeholder="Twoja wiadomość" class="form-input"></textarea>
 
                             @error("content")
-                                <div>{{ $message }}</div>
+                                <div class="text-red-500">{{ $message }}</div>
                             @enderror
                         </div>
 
