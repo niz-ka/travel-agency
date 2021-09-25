@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\DashboardPostController;
-use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
@@ -41,27 +40,29 @@ Route::resource("posty", PostController::class)
     ]);
 
 // Posts management in dashboard area for authenticated users
-Route::prefix("panel")->group(function () {
-    Route::resource("posty", DashboardPostController::class)
-        ->except(["show"])
-        ->names([
-            "index" => "dashboard.posts.index",
-            "create" => "dashboard.posts.create",
-            "store" => "dashboard.posts.store",
-            "edit" => "dashboard.posts.edit",
-            "update" => "dashboard.posts.update",
-            "destroy" => "dashboard.posts.destroy",
-        ])
-        ->parameters([
-            "posty" => "post",
-        ]);
-});
+Route::prefix("panel")
+    ->middleware(["auth", "verified"])
+    ->group(function () {
+        Route::resource("posty", DashboardPostController::class)
+            ->except(["show"])
+            ->names([
+                "index" => "dashboard.posts.index",
+                "create" => "dashboard.posts.create",
+                "store" => "dashboard.posts.store",
+                "edit" => "dashboard.posts.edit",
+                "update" => "dashboard.posts.update",
+                "destroy" => "dashboard.posts.destroy",
+            ])
+            ->parameters([
+                "posty" => "post",
+            ]);
+    });
 
 // It may be changed in the future
 Route::get("panel", function () {
     return redirect(route("dashboard.posts.index"));
 })
     ->name("dashboard")
-    ->middleware("auth");
+    ->middleware(["auth", "verified"]);
 
 require __DIR__ . "/auth.php";

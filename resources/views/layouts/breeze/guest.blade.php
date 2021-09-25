@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ asset("favicon/favicon-96x96.png") }}">
+
         <title>{{ config('app.fullname', 'Laravel') }}</title>
 
         <!-- Styles -->
