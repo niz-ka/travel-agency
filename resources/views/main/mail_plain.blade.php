@@ -1,4 +1,4 @@
-{{ config("app.name") }} - Biuro Podróży
+{{ config("app.fullname") }}
 
 Masz nową wiadomość ze strony {{ config("app.name") }}.
 Adres strony: {{ config("app.url") }}

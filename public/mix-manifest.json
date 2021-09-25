@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/js/anim.js": "/js/anim.js",
     "/js/slider.js": "/js/slider.js",
+    "/js/main.js": "/js/main.js",
     "/css/tailwind.css": "/css/tailwind.css",
     "/css/font-awesome.css": "/css/font-awesome.css"
 }

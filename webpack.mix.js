@@ -14,8 +14,8 @@ const mix = require("laravel-mix");
 mix.js("resources/js/app.js", "public/js")
     .js("resources/js/anim.js", "public/js")
     .js("resources/js/slider.js", "public/js")
+    .js("resources/js/main.js", "public/js")
     .sass("resources/scss/font-awesome.scss", "public/css")
     .postCss("resources/css/tailwind.css", "public/css", [
         require("tailwindcss"),
-    ])
-    .sourceMaps();
+    ]);

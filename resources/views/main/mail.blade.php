@@ -19,7 +19,7 @@
 <body style="background:#f3f4f6; font-family: sans-serif; margin: 20px;">
     <table cellpadding="0" cellspacing="0" border="0" style="background: #ffffff; margin-left: auto; margin-right: auto; max-width: 700px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
         <tr style="background: #000000; color: #ffffff; font-weight: bold;">
-            <td style="padding: 10px;border-top-left-radius: 5px; border-top-right-radius: 5px; font-size: 14px;">{{ config("app.name") }} - Biuro Podróży</td>
+            <td style="padding: 10px;border-top-left-radius: 5px; border-top-right-radius: 5px; font-size: 14px;">{{ config("app.fullname") }}</td>
         </tr>
 
         <tr>

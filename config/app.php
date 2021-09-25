@@ -16,6 +16,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Fullname
+    |--------------------------------------------------------------------------
+    |
+    | This value is the fullname of your application. This value is used when the
+    | framework needs to place the application's fullname in notifications, titles,
+    | footers, e-mails...
+    |
+    */
+
+    "fullname" => env("APP_FULLNAME", "Laravel - web app"),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
     |
@@ -66,7 +79,7 @@ return [
     |
     */
 
-    "timezone" => "UTC",
+    "timezone" => "Europe/Warsaw",
 
     /*
     |--------------------------------------------------------------------------
@@ -105,7 +118,7 @@ return [
     |
     */
 
-    "faker_locale" => "en_US",
+    "faker_locale" => "pl_PL",
 
     /*
     |--------------------------------------------------------------------------

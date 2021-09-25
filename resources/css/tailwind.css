@@ -60,12 +60,16 @@
     @apply mb-4 uppercase font-secondary text-xl font-medium tracking-wider;
 }
 
+.post h2 {
+    @apply mt-4;
+}
+
 .post h3 {
-    @apply mb-4 uppercase font-secondary text-lg font-medium tracking-wider;
+    @apply my-4 uppercase font-secondary text-lg font-medium tracking-wider;
 }
 
 .post h4 {
-    @apply mb-4 uppercase font-secondary text-base font-medium tracking-wider;
+    @apply my-4 uppercase font-secondary text-base font-medium tracking-wider;
 }
 
 .section-paragraph,
@@ -106,4 +110,8 @@
 .post table,
 .post td {
     border: 1px solid #333;
+}
+
+.dashboard-button {
+    @apply text-white p-3 rounded-lg inline-block text-center cursor-pointer;
 }

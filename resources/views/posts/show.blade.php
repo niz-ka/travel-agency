@@ -3,7 +3,7 @@
         <!-- Left -->
         <main class="lg:w-2/3">
             <h1 class="section-heading line-after">{{ $post->title }}</h1>
-            <small>Opublikowano {{ $post->created_at->diffForHumans() }}</small>
+            <small>{{ $post->created_at->diffForHumans() }}</small>
             <div class="flex items-center mt-2">
                 <i class="far fa-user-circle fa-2x pr-2"></i>
                 <small class="px-md text-muted">Przez {{ $post->author->name }}</small>

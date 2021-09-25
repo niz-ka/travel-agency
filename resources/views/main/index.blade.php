@@ -1,5 +1,5 @@
 <x-main-layout>
-
+    <!-- Video section -->
     <section class="relative w-full h-screen">
         <div class="w-full h-full">
             <video playsinline autoplay muted loop poster="{{asset("img/video.jpg")}}" preload="none" role="presentation" class="w-full h-full object-cover">
@@ -15,19 +15,21 @@
         </div>
     </section>
 
-    <x-inspiring-section id="dlaczego-my">
+    <!-- Inspiring section [1] -->
+    <x-main.inspiring-section>
         <x-slot name="textFlexOrder">order-0</x-slot>
         <x-slot name="heading">Twórca doświadczeń</x-slot>
         <x-slot name="imagePath">{{ asset("img/tr1.jpg") }}</x-slot>
             Wierzymy w bardziej autentyczny i w pełni spersonalizowany sposób podróżowania. Podróż zbudowana wokół Twoich pasji i pragnień, od najprostszych do najbardziej niezwykłych. Niezależnie od tego, czy jest to prosta inspiracja, czy prawdziwy plan podróży, wspólnie opracowujemy trasę, która naprawdę spełni Twoje oczekiwania.
-    </x-inspiring-section>
+    </x-main.inspiring-section>
 
-    <x-inspiring-section>
+    <!-- Inspiring section [2] -->
+    <x-main.inspiring-section>
         <x-slot name="textFlexOrder">order-1</x-slot>
         <x-slot name="heading">Blisko Ciebie</x-slot>
          <x-slot name="imagePath">{{ asset("img/tr2.jpg") }}</x-slot>
             Nasze biura podróży spotykają się z Tobą zgodnie z Twoją dostępnością, czasem i miejscem, które Ci odpowiada, aby porozmawiać w uprzywilejowanej i miłej chwili. Naszym pragnieniem jest doradzanie i towarzyszenie w tworzeniu Twojej podróży i aby każdy zachował wyjątkową pamięć o tym doświadczeniu.
-    </x-inspiring-section>
+    </x-main.inspiring-section>
 
     <section class="bg-gray-100 p-2 mt-6">
         <div class="container text-dark mx-auto">
@@ -37,27 +39,28 @@
             </p>
             <!-- Concept cards -->
             <div class="lg:flex text-center mt-6 gap-8">
-                <x-concept-card>
+                <x-main.concept-card>
                     <x-slot name="iconClass">fas fa-globe-europe fa-7x</x-slot>
                     <x-slot name="title">Wiedza</x-slot>
                     Dobrzy koneserzy tego świata, będziemy w stanie Ci doradzić i skierować Cię do miejsc, które naprawdę Ci odpowiadają.
-                </x-concept-card>
+                </x-main.concept-card>
 
-                <x-concept-card>
+                <x-main.concept-card>
                     <x-slot name="iconClass">fas fa-map-marked-alt fa-7x</x-slot>
                     <x-slot name="title">Dostosowywanie</x-slot>
                     Wspólnie budujemy trasę, która łączy Twoje pasje, pragnienia i możliwości oferowane przez miejsca docelowe. Poświęcenie czasu na wysłuchanie Cię i poznanie Cię jest naszym priorytetem.
-                </x-concept-card>
+                </x-main.concept-card>
 
-                <x-concept-card>
+                <x-main.concept-card>
                     <x-slot name="iconClass">fas fa-ticket-alt fa-7x</x-slot>
                     <x-slot name="title">Towarzyszenie</x-slot>
                     Jesteśmy po Twojej stronie wcześniej, aby rozwijać Twoją podróż, w trakcie, aby Cię poprowadzić, a po powrocie, aby podzielić się wspomnieniami.
-                </x-concept-card>
+                </x-main.concept-card>
             </div>
         </div>
     </section>
 
+    <!-- Slider -->
     <section role="presentation" class="mt-6">
         <div class="container mx-auto">
             <div class="slider relative w-full h-screen" slider-duration="4000">
@@ -65,24 +68,24 @@
                 class="prev absolute top-1/2 left-4 text-white z-10 transform -translate-y-1/2">
                     <i class="fas fa-chevron-left fa-2x"></i>
                 </button>
+
                 <button aria-label="Następny slajd" class="next absolute top-1/2 right-4 text-white z-10 transform -translate-y-1/2">
                     <i class="fas fa-chevron-right fa-2x"></i>
                 </button>
 
                 @for ($i = 1; $i <= 4; $i++)
-                    <x-slider-slide>
+                    <x-main.slider-slide>
                         <x-slot name="imagePath">{{ asset("img/s$i.jpg") }}</x-slot>
                         @if ($i === 1)
                             <x-slot name="currentClass">current</x-slot>
                         @endif
-                    </x-slider-slide>
+                    </x-main.slider-slide>
                 @endfor
-
             </div>
         </div>
     </section>
 
-    <!-- Blog cards -->
+    <!-- Blog cards section -->
     <section class="bg-gray-100 p-2 mt-6 text-dark">
         <div class="container mx-auto text-center">
             <h2 class="section-heading text-center mt-6">Ostatnie wieści</h2>
@@ -91,22 +94,22 @@
             </p>
         </div>
 
+        <!-- Blog cards -->
         <div class="container mt-6 mx-auto">
             <div class="flex flex-col lg:flex-row gap-8">
-                @if (count($posts) > 0)
-                    @foreach ($posts as $post)
-                        <x-blog-card>
-                            <x-slot name="img">{{ $post->image }}</x-slot>
-                            <x-slot name="title">{{ $post->title }}</x-slot>
-                            <x-slot name="date">{{ $post->created_at->diffForHumans() }}</x-slot>
-                            <x-slot name="author">{{ $post->author->name }}</x-slot>
-                            <x-slot name="link">{{ route("posts.show", $post->slug) }}</x-slot>
-                            {!! clean(strip_tags(Str::limit($post->content, 200, '...'))) !!}
-                        </x-blog-card>
-                    @endforeach
-                @else
+                @forelse ($posts as $post)
+                    <x-main.blog-card>
+                        <x-slot name="img">{{ $post->image }}</x-slot>
+                        <x-slot name="title">{{ $post->title }}</x-slot>
+                        <x-slot name="date">{{ $post->created_at->diffForHumans() }}</x-slot>
+                        <x-slot name="author">{{ $post->author->name }}</x-slot>
+                        <x-slot name="link">{{ route("posts.show", $post->slug) }}</x-slot>
+                        {{-- clean() - HTML Purifier --}}
+                        {!! clean(strip_tags(Str::limit($post->content, 200, '...'))) !!}
+                    </x-main.blog-card>
+                @empty
                     <div class="mx-auto">Aktualnie brak nowych wpisów. Koniecznie wróć później!</div>
-                 @endif
+                @endforelse
             </div>
 
             <!-- Read more -->
@@ -116,87 +119,49 @@
         </div>
     </section>
 
+    <!-- Contact section -->
     <section class="bg-black pb-6" id="contact">
         <div class="container mx-auto text-white">
             <h2 class="section-heading text-center py-8">Kontakt</h2>
             <div class="flex flex-col items-center lg:flex-row lg:items-start justify-around gap-8">
                 <!-- Contact info -->
                 <div class="flex flex-col gap-8">
-                    <div class="flex items-center gap-4">
-                        <i class="fas fa-phone-alt fa-2x"></i>
-                        <div>
-                            <h3 class="uppercase text-accent font-medium font-secondary tracking-widest text-xl mb-2">Telefon</h3>
-                            <strong>600 400 300</strong>
-                        </div>
-                    </div>
+                    <x-main.contact-card>
+                        <x-slot name="iconClass">fas fa-phone-alt fa-2x</x-slot>
+                        <x-slot name="heading">Telefon</x-slot>
+                        600 400 300
+                    </x-main.contact-card>
 
-                     <div class="flex items-center gap-4">
-                        <i class="fas fa-envelope fa-2x"></i>
-                        <div>
-                            <h3 class="uppercase text-accent font-medium font-secondary tracking-widest text-xl mb-2">E-mail</h3>
-                            <strong><a href="mailto:biuro@travel.io">biuro@travel.io</a></strong>
-                        </div>
-                    </div>
+                    <x-main.contact-card>
+                        <x-slot name="iconClass">fas fa-envelope fa-2x</x-slot>
+                        <x-slot name="heading">E-mail</x-slot>
+                        <a href="mailto:biuro@travel.io">biuro@travel.io</a>
+                    </x-main.contact-card>
 
-                    <div class="flex items-center gap-4">
-                        <i class="fas fa-phone-alt fa-2x"></i>
-                        <div>
-                            <h3 class="uppercase text-accent font-medium font-secondary tracking-widest text-xl mb-2">Adres</h3>
-                            <address class="not-italic font-bold">
+                     <x-main.contact-card>
+                        <x-slot name="iconClass">fas fa-map-marked-alt fa-2x</x-slot>
+                        <x-slot name="heading">Adres</x-slot>
+                        <address class="not-italic font-bold">
                                 ul. Podróżna 2a<br />
                                 00-009 Warszawa
-                            </address>
-                        </div>
-                    </div>
+                        </address>
+                    </x-main.contact-card>
                 </div>
                 <!-- Contact form -->
                 <div class=" max-w-sm flex-1">
 
                     @if(session("status"))
-                    <div class="mb-3 uppercase font-secondary tracking-widest text-green-600">{{ session("status") }}</div>
+                        <div class="mb-3 uppercase font-secondary tracking-widest text-green-600">{{ session("status") }}</div>
                     @endif
 
-                    <form action="{{ route("mailSender") . "#contact" }}" method="POST" class="flex flex-col gap-4 w-full">
+                    <form action="{{ route("contactForm") }}" method="POST" class="flex flex-col gap-4 w-full">
                         @csrf
-                        <div>
-                            <label for="fullName" class="hidden">Imię i nazwisko</label>
-                            <input type="text" name="fullName" id="fullName" placeholder="Imię i nazwisko" class="form-input">
-
-                            @error("fullName")
-                                <div class="text-red-500">{{ $message }}</div>
-                            @enderror
-                        </div>
-
+                        <x-main.form-input name="fullName" type="text" label="Imię i nazwisko" classList="form-input" required maxlength="80" />
+                        <x-main.form-input name="email" type="email" label="E-mail" classList="form-input" required maxlength="80" />
+                        <x-main.form-input name="tel" type="tel" label="Telefon" classList="form-input" required maxlength="20" />
+                        <x-main.form-textarea name="content" label="Twoja wiadomość" classList="form-input" required maxlength="2000" />
                         {{-- Honeypot --}}
                         <input type="hidden" name="user_data">
-
-                        <div>
-                            <label for="email" class="hidden">E-mail</label>
-                            <input type="text" name="email" id="email" placeholder="E-mail" class="form-input">
-
-                            @error("email")
-                               <div class="text-red-500">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-
-                        <div>
-                            <label for="tel" class="hidden">Telefon</label>
-                            <input type="text" name="tel" id="tel" placeholder="Telefon" class="form-input">
-
-                            @error("tel")
-                                <div class="text-red-500">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="content" class="hidden">Twoja wiadomość</label>
-                            <textarea name="content" id="content" cols="30" rows="10" placeholder="Twoja wiadomość" class="form-input"></textarea>
-
-                            @error("content")
-                                <div class="text-red-500">{{ $message }}</div>
-                            @enderror
-                        </div>
 
                         <button class="btn-white w-full">Wyślij</button>
                     </form>
@@ -206,6 +171,7 @@
     </section>
 
     <x-slot name="javascript">
+        <!-- Additional scripts for this page -->
         <script src={{asset("js/anim.js")}}></script>
         <script src="{{ asset("js/slider.js") }}"></script>
     </x-slot>

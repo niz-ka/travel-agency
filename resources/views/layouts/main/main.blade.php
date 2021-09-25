@@ -1,11 +1,12 @@
+{{-- Main website layout component --}}
 <!DOCTYPE html>
 <html lang="pl">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="travel.io - inspiracje podróżami z całego świata">
+        <meta name="description" content="{{ config("app.name") }} - inspiracje podróżami z całego świata">
 
-        <title>{{ config("app.name") }} - Biuro Podróży</title>
+        <title>{{ config("app.fullname") }}</title>
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset("css/tailwind.css") }}">
@@ -44,13 +45,14 @@
         </div>
     </header>
 
-    <nav id="main-nav" class="lg:py-4 hidden lg:block sticky top-12 lg:top-0 z-40 bg-white border-b-2">
+    <!-- Navbar -->
+    <nav id="main-nav" class="lg:py-3 hidden lg:block sticky top-12 lg:top-0 z-40 bg-white border-b-2">
         <ul class="pb-2 lg:pb-0 absolute top-0 left-0 w-full lg:static bg-white pt-4 lg:pt-0 pl-3 lg:pl-0 uppercase flex flex-col lg:flex-row gap-4 justify-center font-secondary tracking-widest text-gray-600">
-            <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#dlaczego-my" }}">Dlaczego my?</a></li>
-            <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#nasz-koncept" }}">Koncept</a></li>
-            <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#aktualnosci" }}">Aktualności</a></li>
-            <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#kontakt" }}">Kontakt</a></li>
-            <li class="hover:text-black hover:underline"><a href="{{ route("index") . "#kontakt" }}">Blog</a></li>
+            <x-main.nav-link section="#dlaczego-my?" name="dlaczego my?"  />
+            <x-main.nav-link section="#koncept" name="koncept" />
+            <x-main.nav-link section="#aktualności" name="aktualności" />
+            <x-main.nav-link section="#kontakt" name="kontakt" />
+            <x-main.nav-link route="posts.index" name="blog" />
         </ul>
     </nav>
 
@@ -60,7 +62,7 @@
     <!-- Footer -->
     <footer class="bg-dark">
         <div class="container mx-auto text-white flex justify-between items-center p-3">
-            <small>&copy; {{ date("Y") }} - Wszelkie prawa zastrzeżone </small>
+            <small>&copy; {{ date("Y") }} {{ config("app.name") }} - Wszelkie prawa zastrzeżone </small>
             <div class="flex gap-3">
                 <i class="fab fa-facebook-square fa-2x"></i>
                 <i class="fab fa-instagram fa-2x"></i>
@@ -68,30 +70,10 @@
         </div>
     </footer>
 
-    <button id="top-button" class="fixed text-accent right-4 bottom-4 text-3xl" title="Idź do góry"><i class="fas fa-arrow-circle-up"></i></button>
+    <button id="BackToTopButton" class="fixed text-accent right-4 bottom-4 text-3xl" title="Idź do góry"><i class="fas fa-arrow-circle-up"></i></button>
 
     <!-- JavaScript -->
-    <script>
-        const topButton = document.querySelector("#top-button");
-
-        document.querySelector("#nav-button").addEventListener("click", () => {
-            document.querySelector("#main-nav").classList.toggle("hidden");
-        });
-
-        topButton.addEventListener("click", () => {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        })
-
-        window.addEventListener("scroll", () => {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                topButton.style.display = "block";
-            } else {
-                topButton.style.display = "none";
-            }
-        });
-
-    </script>
+    <script src="{{ asset("js/main.js") }}"></script>
 
     {{ $javascript ?? '' }}
 </body>

@@ -32342,7 +32342,12 @@ select {
   font-family: "Oswald", sans-serif;
 }
 
+.post h2 {
+  margin-top: 1rem;
+}
+
 .post h3 {
+  margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -32353,6 +32358,7 @@ select {
 }
 
 .post h4 {
+  margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -32402,6 +32408,16 @@ select {
 .post table,
 .post td {
   border: 1px solid #333;
+}
+
+.dashboard-button {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
