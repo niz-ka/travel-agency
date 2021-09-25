@@ -36,7 +36,7 @@ class ContactFormController extends Controller
             )
         );
 
-        return \redirect(route("index") . "#contact")->with(
+        return \redirect(route("index") . "#kontakt")->with(
             "status",
             "Twój e-mail został wysłany!"
         );

@@ -16,6 +16,7 @@
     </section>
 
     <!-- Inspiring section [1] -->
+    <div id="dlaczego-my"></div>
     <x-main.inspiring-section>
         <x-slot name="textFlexOrder">order-0</x-slot>
         <x-slot name="heading">Twórca doświadczeń</x-slot>
@@ -31,6 +32,8 @@
             Nasze biura podróży spotykają się z Tobą zgodnie z Twoją dostępnością, czasem i miejscem, które Ci odpowiada, aby porozmawiać w uprzywilejowanej i miłej chwili. Naszym pragnieniem jest doradzanie i towarzyszenie w tworzeniu Twojej podróży i aby każdy zachował wyjątkową pamięć o tym doświadczeniu.
     </x-main.inspiring-section>
 
+    <!-- Concept -->
+    <div id="koncept"></div>
     <section class="bg-gray-100 p-2 mt-6">
         <div class="container text-dark mx-auto">
             <h2 class="section-heading text-center mt-6">Nasza koncepcja szyta na miarę</h2>
@@ -86,6 +89,7 @@
     </section>
 
     <!-- Blog cards section -->
+    <div id="aktualnosci"></div>
     <section class="bg-gray-100 p-2 mt-6 text-dark">
         <div class="container mx-auto text-center">
             <h2 class="section-heading text-center mt-6">Ostatnie wieści</h2>
@@ -120,7 +124,8 @@
     </section>
 
     <!-- Contact section -->
-    <section class="bg-black pb-6" id="contact">
+    <div id="kontakt"></div>
+    <section class="bg-black pb-6">
         <div class="container mx-auto text-white">
             <h2 class="section-heading text-center py-8">Kontakt</h2>
             <div class="flex flex-col items-center lg:flex-row lg:items-start justify-around gap-8">

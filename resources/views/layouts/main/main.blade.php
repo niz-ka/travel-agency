@@ -1,6 +1,6 @@
 {{-- Main website layout component --}}
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" style="scroll-behavior: smooth">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,9 +48,9 @@
     <!-- Navbar -->
     <nav id="main-nav" class="lg:py-3 hidden lg:block sticky top-12 lg:top-0 z-40 bg-white border-b-2">
         <ul class="pb-2 lg:pb-0 absolute top-0 left-0 w-full lg:static bg-white pt-4 lg:pt-0 pl-3 lg:pl-0 uppercase flex flex-col lg:flex-row gap-4 justify-center font-secondary tracking-widest text-gray-600">
-            <x-main.nav-link section="#dlaczego-my?" name="dlaczego my?"  />
+            <x-main.nav-link section="#dlaczego-my" name="dlaczego my?"  />
             <x-main.nav-link section="#koncept" name="koncept" />
-            <x-main.nav-link section="#aktualności" name="aktualności" />
+            <x-main.nav-link section="#aktualnosci" name="aktualności" />
             <x-main.nav-link section="#kontakt" name="kontakt" />
             <x-main.nav-link route="posts.index" name="blog" />
         </ul>
