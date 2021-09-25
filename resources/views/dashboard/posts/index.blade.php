@@ -1,9 +1,4 @@
 <x-app-layout>
-    <x-slot name="dependencies">
-         <!-- Font awesome -->
-        <link rel="stylesheet" href="{{ asset("css/font-awesome.css") }}">
-    </x-slot>
-
     <div class="mx-auto mt-12 max-w-4xl">
         <!-- New blog entry button -->
         <div class="mx-4 my-8 text-right">

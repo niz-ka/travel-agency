@@ -5,7 +5,7 @@
     </div>
     <!-- Text data -->
     <div class="w-full md:w-auto flex-1">
-        <h3 class="font-bold text-xl">{{ $title }}</h3>
+        <h3 class="font-bold text-xl font-secondary uppercase tracking-wider">{{ $title }}</h3>
         <div class="mt-2 text-justify">{!! $content !!}</div>
         <small class="text-gray-600 block mt-2">{{ $date }}</small>
     </div>
