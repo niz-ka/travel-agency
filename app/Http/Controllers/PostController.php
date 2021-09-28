@@ -14,7 +14,14 @@ class PostController extends Controller
      */
     public function index()
     {
-        //TODO
+        return view("posts.index", [
+            "posts" => Post::latest()->paginate(5),
+            "categories" => Category::select("name", "id")->get(),
+            "latest" => Post::select("title", "slug")
+                ->latest()
+                ->take(5)
+                ->get(),
+        ]);
     }
 
     /**
@@ -27,8 +34,8 @@ class PostController extends Controller
     {
         return view("posts.show", [
             "post" => $post,
-            "categories" => Category::select("name")->get(),
-            "postsWithCategory" => Post::select("title")
+            "categories" => Category::select("name", "id")->get(),
+            "postsWithCategory" => Post::select("title", "slug")
                 ->where("category_id", $post->category_id)
                 ->get(),
         ]);

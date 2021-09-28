@@ -6,7 +6,7 @@
     <!-- Text data -->
     <div class="w-full md:w-auto flex-1">
         <h3 class="font-bold text-xl font-secondary uppercase tracking-wider">{{ $title }}</h3>
-        <div class="mt-2 text-justify">{!! $content !!}</div>
+        <div class="mt-2 break-words">{!! $content !!}</div>
         <small class="text-gray-600 block mt-2">{{ $date }}</small>
     </div>
     <!-- Buttons -->
