@@ -36,7 +36,7 @@
 
 <body class="font-primary">
     <!-- Header -->
-    <header class="sticky top-0 left-0 lg:static w-full bg-white z-40">
+    <header class="sticky top-0 left-0 lg:static w-full bg-white z-40 border-b-2 lg:border-0">
         <div class="flex items-center lg:block relative h-12 lg:h-auto ">
             <button id="nav-button" class="lg:hidden pl-3" aria-label="Przycisk nawigacji"><i class="fas fa-bars fa-2x"></i></button>
             <a href="{{ route("index") }}">

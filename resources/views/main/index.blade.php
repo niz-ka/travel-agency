@@ -2,7 +2,7 @@
     <!-- Video section -->
     <section class="relative w-full h-screen">
         <div class="w-full h-full">
-            <video playsinline autoplay muted loop poster="{{asset("img/video.jpg")}}" preload="none" role="presentation" class="w-full h-full object-cover">
+            <video playsinline autoplay muted loop poster="{{ asset("img/video.jpg") }}" preload="none" role="presentation" class="w-full h-full object-cover">
                 <source src="{{ asset("video/background_video.webm") }}" type="video/webm">
                 <source src="{{ asset("video/background_video.mp4") }}" type="video/mp4">
             </video>
@@ -10,14 +10,13 @@
             <div class="absolute top-0 left-0 text-white w-full h-full justify-center items-center flex flex-col text-center gap-12 bg-black bg-opacity-20">
                 <h2 class="text-3xl sm:text-5xl md:text-7xl font-secondary uppercase font-medium tracking-widest">Biuro podróży</h2>
                 <div class="md:text-xl font-secondary uppercase tracking-widest font-medium">Twoja podróż jest wyjątkowa</div>
-                <a href="#" class="btn-white">Odkryj nas</a>
+                <a href="#kontakt" class="btn-white">Odkryj nas</a>
             </div>
         </div>
     </section>
 
     <!-- Inspiring section [1] -->
-    <div id="dlaczego-my"></div>
-    <x-main.inspiring-section>
+    <x-main.inspiring-section id="dlaczego-my">
         <x-slot name="textFlexOrder">order-0</x-slot>
         <x-slot name="heading">Twórca doświadczeń</x-slot>
         <x-slot name="imagePath">{{ asset("img/tr1.jpg") }}</x-slot>
@@ -33,8 +32,7 @@
     </x-main.inspiring-section>
 
     <!-- Concept -->
-    <div id="koncept"></div>
-    <section class="bg-gray-100 p-2 mt-6">
+    <section class="bg-gray-100 p-2 mt-6 scroll-mt" id="koncept">
         <div class="container text-dark mx-auto">
             <h2 class="section-heading text-center mt-6">Nasza koncepcja szyta na miarę</h2>
             <p class="max-w-xl mx-auto text-center section-paragraph">
@@ -89,8 +87,7 @@
     </section>
 
     <!-- Blog cards section -->
-    <div id="aktualnosci"></div>
-    <section class="bg-gray-100 p-2 mt-6 text-dark">
+    <section class="bg-gray-100 p-2 mt-6 text-dark scroll-mt" id="aktualnosci">
         <div class="container mx-auto text-center">
             <h2 class="section-heading text-center mt-6">Ostatnie wieści</h2>
             <p class="section-paragraph max-w-xl mx-auto">
@@ -102,12 +99,12 @@
         <div class="container mt-6 mx-auto">
             <div class="flex flex-col lg:flex-row gap-8">
                 @forelse ($posts as $post)
-                    <x-main.blog-card>
-                        <x-slot name="img">{{ $post->image }}</x-slot>
-                        <x-slot name="title">{{ $post->title }}</x-slot>
-                        <x-slot name="date">{{ $post->created_at->diffForHumans() }}</x-slot>
-                        <x-slot name="author">{{ $post->author->name }}</x-slot>
-                        <x-slot name="link">{{ route("posts.show", $post->slug) }}</x-slot>
+                    <x-main.blog-card
+                    :img="$post->image"
+                    :title="$post->title"
+                    :date="$post->created_at->diffForHumans()" :author="$post->author->name"
+                    :link="route('posts.show', $post->slug)"
+                    :category="$post->category ? $post->category->name : 'Bez kategorii'">
                         {{-- clean() - HTML Purifier --}}
                         {!! clean(strip_tags(Str::limit($post->content, 200, '...'))) !!}
                     </x-main.blog-card>
@@ -118,14 +115,13 @@
 
             <!-- Read more -->
             <div class="text-center my-12">
-                <a href="#" class="btn-black">Odkryj nowości</a>
+                <a href="{{ route("posts.index") }}" class="btn-black">Odkryj nowości</a>
             </div>
         </div>
     </section>
 
     <!-- Contact section -->
-    <div id="kontakt"></div>
-    <section class="bg-black pb-6">
+    <section class="bg-black pb-6 scroll-mt" id="kontakt">
         <div class="container mx-auto text-white">
             <h2 class="section-heading text-center py-8">Kontakt</h2>
             <div class="flex flex-col items-center lg:flex-row lg:items-start justify-around gap-8">
@@ -177,7 +173,7 @@
 
     <x-slot name="javascript">
         <!-- Additional scripts for this page -->
-        <script src={{asset("js/anim.js")}}></script>
+        <script src={{ asset("js/anim.js") }}></script>
         <script src="{{ asset("js/slider.js") }}"></script>
     </x-slot>
 

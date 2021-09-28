@@ -32191,16 +32191,48 @@ select {
   border: 1px solid #dca57d;
 }
 
+.border-b-accent {
+  border-bottom: 1px solid #dca57d;
+}
+
+.border-b2-accent {
+  border-bottom: 2px solid #dca57d;
+}
+
 .group:hover .group-hover\:border-accent {
   border: 1px solid #dca57d;
+}
+
+.group:hover .group-hover\:border-b-accent {
+  border-bottom: 1px solid #dca57d;
+}
+
+.group:hover .group-hover\:border-b2-accent {
+  border-bottom: 2px solid #dca57d;
 }
 
 .hover\:border-accent:hover {
   border: 1px solid #dca57d;
 }
 
+.hover\:border-b-accent:hover {
+  border-bottom: 1px solid #dca57d;
+}
+
+.hover\:border-b2-accent:hover {
+  border-bottom: 2px solid #dca57d;
+}
+
 .focus\:border-accent:focus {
   border: 1px solid #dca57d;
+}
+
+.focus\:border-b-accent:focus {
+  border-bottom: 1px solid #dca57d;
+}
+
+.focus\:border-b2-accent:focus {
+  border-bottom: 2px solid #dca57d;
 }
 
 .form-input {
@@ -32342,6 +32374,28 @@ select {
   font-family: "Oswald", sans-serif;
 }
 
+.aside-heading {
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #dca57d;
+}
+
+.aside-heading, .post h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: "Oswald", sans-serif;
+}
+
+.aside-heading {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
 .post h2 {
   margin-top: 1rem;
 }
@@ -32418,6 +32472,10 @@ select {
   text-align: center;
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.scroll-mt {
+  scroll-margin-top: 50px;
 }
 
 @media (min-width: 640px) {

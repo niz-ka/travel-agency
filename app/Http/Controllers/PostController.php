@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
 
 class PostController extends Controller
 {
@@ -26,6 +27,10 @@ class PostController extends Controller
     {
         return view("posts.show", [
             "post" => $post,
+            "categories" => Category::select("name")->get(),
+            "postsWithCategory" => Post::select("title")
+                ->where("category_id", $post->category_id)
+                ->get(),
         ]);
     }
 }

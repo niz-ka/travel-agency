@@ -9,6 +9,14 @@
     .border-accent {
         border: 1px solid #dca57d;
     }
+
+    .border-b-accent {
+        border-bottom: 1px solid #dca57d;
+    }
+
+    .border-b2-accent {
+        border-bottom: 2px solid #dca57d;
+    }
 }
 
 .form-input {
@@ -58,6 +66,11 @@
 .section-subheading,
 .post h2 {
     @apply mb-4 uppercase font-secondary text-xl font-medium tracking-wider;
+}
+
+.aside-heading {
+    @apply section-subheading border-b2-accent pb-2 inline-block;
+    @apply text-base tracking-widest;
 }
 
 .post h2 {
@@ -114,4 +127,8 @@
 
 .dashboard-button {
     @apply text-white p-3 rounded-lg inline-block text-center cursor-pointer;
+}
+
+.scroll-mt {
+    scroll-margin-top: 50px;
 }

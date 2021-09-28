@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->string("title", 300);
             $table->string("slug", 150)->unique();
             $table->longText("content");
-            $table->string("image", 300)->nullable();
+            $table->string("image", 300);
             $table
                 ->foreignIdFor(User::class)
                 ->constrained()

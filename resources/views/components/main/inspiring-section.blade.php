@@ -1,4 +1,5 @@
-<section data-aos="fade-right" data-aos-duration="1000" class="mt-8">
+@props(["textFlexOrder", "heading", "slot", "imagePath"])
+<section data-aos="fade-right" data-aos-duration="1000" class="mt-8 scroll-mt" {{ $attributes }}>
         <div class="container mx-auto lg:flex gap-8">
             <!-- Text -->
             <div class="p-4 flex-1 self-center {{ $textFlexOrder }}">
