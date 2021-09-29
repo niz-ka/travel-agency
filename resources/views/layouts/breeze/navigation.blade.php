@@ -15,6 +15,9 @@
                     <x-breeze.nav-link :href="route('dashboard.posts.index')" :active="request()->routeIs('dashboard.posts.*')">
                         Posty
                     </x-breeze.nav-link>
+                    <x-breeze.nav-link :href="route('dashboard.categories.index')" :active="request()->routeIs('dashboard.categories.*')">
+                        Kategorie
+                    </x-breeze.nav-link>
                 </div>
             </div>
 
@@ -64,6 +67,9 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-breeze.responsive-nav-link :href="route('dashboard.posts.index')" :active="request()->routeIs('dashboard.posts.*')">
                 Posty
+            </x-breeze.responsive-nav-link>
+            <x-breeze.responsive-nav-link :href="route('dashboard.categories.index')" :active="request()->routeIs('dashboard.categories.*')">
+                Kategorie
             </x-breeze.responsive-nav-link>
         </div>
 

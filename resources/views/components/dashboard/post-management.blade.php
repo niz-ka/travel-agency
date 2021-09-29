@@ -18,10 +18,24 @@
                 type="text"
                 id="title"
                 name="title"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 @error("title") border-red-500 @enderror"
+                class="dashboard-input"
                 value="{{ $type == "edit" ? $post->title : old("title") }}">
 
                 @error("title")
+                    <div class="text-red-500 mt-2">{{ $message }}</div>
+                @enderror
+            </div>
+            <!-- Category -->
+            <div>
+                <label for="category" class="block mb-2">Kategoria</label>
+                <select name="category" id="category" class="dashboard-input cursor-pointer">
+                    <option value="">Bez kategorii</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}" {{ ($type == "edit" && $category->id === $post->category_id) || ($type != "edit" && old("category") == $category->id) ? "selected" : "" }}>{{ $category->name }}</option>
+                    @endforeach
+                </select>
+
+                @error("category")
                     <div class="text-red-500 mt-2">{{ $message }}</div>
                 @enderror
             </div>

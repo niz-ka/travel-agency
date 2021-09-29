@@ -155,5 +155,7 @@ return [
         "fullName" => "imię i nazwisko",
         "message" => "wiadomość",
         "email" => "e-mail",
+        "name" => "nazwa",
+        "category" => "kategoria",
     ],
 ];

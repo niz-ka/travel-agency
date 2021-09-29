@@ -12,6 +12,6 @@
             {{ $posts->links() }}
         </main>
         <!-- Right -->
-        <x-main.sidebar :categories="$categories" :posts="$posts" />
+        <x-main.sidebar :categories="$categories" :posts="$latest" />
     </div>
 </x-main-layout>

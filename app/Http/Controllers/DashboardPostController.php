@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Str;
@@ -20,6 +21,7 @@ class DashboardPostController extends Controller
     {
         return view("dashboard.posts.index", [
             "posts" => Post::where("user_id", auth()->user()->id)
+                ->with(["category:name,id"])
                 ->latest()
                 ->paginate(5),
         ]);
@@ -32,7 +34,9 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        return view("dashboard.posts.create");
+        return view("dashboard.posts.create", [
+            "categories" => Category::select("name", "id")->get(),
+        ]);
     }
 
     /**
@@ -47,6 +51,7 @@ class DashboardPostController extends Controller
             "title" => "required|unique:posts|max:290",
             "content" => "required",
             "image" => "image|max:1999",
+            "category" => ["nullable", "exists:categories,id"],
         ]);
 
         $path = $request->hasFile("image")
@@ -59,6 +64,7 @@ class DashboardPostController extends Controller
             "content" => $request->content,
             "image" => $path,
             "user_id" => $request->user()->id,
+            "category_id" => $request->category,
         ]);
 
         return redirect(route("dashboard.posts.index"))->with(
@@ -70,13 +76,14 @@ class DashboardPostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function edit(Post $post)
     {
         return view("dashboard.posts.edit", [
             "post" => $post,
+            "categories" => Category::select("name", "id")->get(),
         ]);
     }
 
@@ -84,7 +91,7 @@ class DashboardPostController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Post $post)
@@ -101,6 +108,7 @@ class DashboardPostController extends Controller
             ],
             "content" => ["required"],
             "image" => ["image", "max:1999"],
+            "category" => ["nullable", "exists:categories,id"],
         ]);
 
         if ($request->hasFile("image")) {
@@ -119,6 +127,7 @@ class DashboardPostController extends Controller
             "content" => $request->content,
             "image" => $path,
             "user_id" => $request->user()->id,
+            "category_id" => $request->category,
         ]);
 
         return redirect(route("dashboard.posts.index"))->with(
@@ -130,7 +139,7 @@ class DashboardPostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function destroy(Post $post)

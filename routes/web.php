@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\DashboardCategoryController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +23,7 @@ use App\Models\Post;
 Route::get("/", function () {
     return view("main.index", [
         "posts" => Post::limit(3)
+            ->with(["author:name,id", "category:name,id"])
             ->latest()
             ->get(),
     ]);
@@ -39,10 +43,17 @@ Route::resource("posty", PostController::class)
         "posty" => "post",
     ]);
 
-// Posts management in dashboard area for authenticated users
+// Showing posts with given category
+Route::resource("kategorie", CategoryController::class)
+    ->only(["show"])
+    ->names(["show" => "categories.show"])
+    ->parameters(["kategorie" => "category"]);
+
+// Management in dashboard area for authenticated users
 Route::prefix("panel")
     ->middleware(["auth", "verified"])
     ->group(function () {
+        // Posts
         Route::resource("posty", DashboardPostController::class)
             ->except(["show"])
             ->names([
@@ -55,6 +66,20 @@ Route::prefix("panel")
             ])
             ->parameters([
                 "posty" => "post",
+            ]);
+        // Categories
+        Route::resource("kategorie", DashboardCategoryController::class)
+            ->except(["show"])
+            ->names([
+                "index" => "dashboard.categories.index",
+                "create" => "dashboard.categories.create",
+                "store" => "dashboard.categories.store",
+                "edit" => "dashboard.categories.edit",
+                "update" => "dashboard.categories.update",
+                "destroy" => "dashboard.categories.destroy",
+            ])
+            ->parameters([
+                "kategorie" => "category",
             ]);
     });
 

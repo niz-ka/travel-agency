@@ -9,8 +9,20 @@ class Category extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var string[]
+     */
+    protected $fillable = ["name", "slug"];
+
     public function posts()
     {
         return $this->hasMany(Post::class);
+    }
+
+    public function getRouteKeyName()
+    {
+        return "slug";
     }
 }

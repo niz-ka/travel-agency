@@ -5,9 +5,9 @@
         <div>
             <ul class="uppercase inline-block">
                 @forelse ($categories as $category)
-                    <li class="border-2 my-2 p-1 cursor-pointer hover:border-black transition-colors">{{ $category->name }}</li>
+                    <li><a href="{{ route("categories.show", $category->slug) }}" class="border-2 block p-1 my-2 cursor-pointer hover:border-black transition-colors">{{ $category->name }}</a></li>
                 @empty
-                    <li>Brak kategorii</li>
+                    <li class="normal-case">Brak kategorii</li>
                 @endforelse
             </ul>
         </div>

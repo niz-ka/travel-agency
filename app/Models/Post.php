@@ -13,8 +13,14 @@ class Post extends Model
 
     const DEFAULT_IMAGE_PATH = "images/no_entry_image.jpg";
 
-    protected $fillable = ["title", "slug", "content", "image", "user_id"];
-    protected $with = ["author", "category"];
+    protected $fillable = [
+        "title",
+        "slug",
+        "content",
+        "image",
+        "user_id",
+        "category_id",
+    ];
 
     public function author()
     {

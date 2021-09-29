@@ -7,7 +7,7 @@
 
         <link rel="icon" type="image/png" sizes="96x96" href="{{ asset("favicon/favicon-96x96.png") }}">
 
-        <title>{{ config('app.fullname', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Laravel') }} - Panel</title>
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}">

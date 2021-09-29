@@ -1,26 +1,14 @@
 <x-app-layout>
-    <div class="mx-auto mt-12 max-w-4xl">
+    <div class="mx-auto mt-12 max-w-4xl px-3">
         <!-- New blog entry button -->
-        <div class="mx-4 my-8 text-right">
-            <a href="{{ route("dashboard.posts.create") }}" class="dashboard-button bg-green-500  hover:bg-green-600 mr-4 w-full md:w-auto">
-                Dodaj
-            </a>
-        </div>
+         <x-dashboard.new-resource-button route="dashboard.posts.create" classList="mr-4" />
         <!-- Success message -->
-        @if(session("status"))
-            <div class="mx-4 mb-12 bg-green-300 p-4 rounded-xl text-green-900 font-bold">
-                <i class="fas fa-check"></i>
-                {{ session("status") }}
-            </div>
-        @endif
+        @include("components.dashboard.status-message")
         <!-- Blog entry cards -->
         @forelse($posts as $post)
-            <x-dashboard.blog-card :image="$post->image" :title="$post->title" :content="clean(strip_tags(Str::limit($post->content, 200, '...')))" :date="$post->created_at->diffForHumans()" :post="$post" />
+            <x-dashboard.blog-card :post="$post" />
         @empty
-            <div class="mx-4 bg-white shadow-md p-4 rounded-xl flex items-center">
-                <i class="far fa-frown-open mr-2 fa-2x"></i>
-                <span>Aktualnie nie posiadasz żadnych wpisów.</span>
-            </div>
+            <x-dashboard.no-resource-message text="Aktualnie nie posiadasz żadnych wpisów" />
         @endforelse
         <!-- Pagination -->
         <div class="pb-8">
