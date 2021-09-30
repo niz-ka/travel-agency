@@ -1,4 +1,4 @@
-<div class="max-w-3xl bg-white shadow-md rounded-xl mx-auto my-12">
+<div class="max-w-5xl bg-white shadow-md rounded-xl mx-auto my-12">
     <div class="bg-gray-300 rounded-t-xl px-4 py-2">
         {{ $type == "edit" ? "Edytowanie wpisu" : "Dodawanie wpisu" }}
     </div>
@@ -19,7 +19,10 @@
                 id="title"
                 name="title"
                 class="dashboard-input"
-                value="{{ $type == "edit" ? $post->title : old("title") }}">
+                value="{{ $type == "edit" ? $post->title : old("title") }}"
+                required
+                maxlength="300"
+                >
 
                 @error("title")
                     <div class="text-red-500 mt-2">{{ $message }}</div>
@@ -54,11 +57,17 @@
             </div>
             <!-- Image -->
             <div class="mt-6">
+                <label for="image" class="inline-block mb-2 bg-indigo-600 text-white p-2 rounded-md cursor-pointer hover:bg-indigo-900 w-full md:w-auto">
+                    <i class="fas fa-upload mr-1"></i>
+                    Prześlij zdjęcie
+                </label>
+                <input type="file" name="image" id="image" class="hidden" accept=".jpg, .jpeg, .png, .svg, .webp, .gif, .bmp, .tiff">
+
                 @if($type == "edit")
-                    <img src="{{ asset("storage") . "/" . $post->image }}" alt="" class="w-32 h-32 object-cover rounded-md mb-4" />
+                    <img src="{{ asset("storage") . "/" . $post->image }}" alt="" class="w-36 h-36 object-cover rounded-md mb-4" id="imgSrc" />
+                @else
+                    <img src="{{ asset("storage/images/no_entry_image.jpg") }}" alt="" class="w-36 h-36 object-cover rounded-md mb-4" id="imgSrc" />
                 @endif
-                <label for="image" class="block mb-2">Zdjęcie</label>
-                <input type="file" name="image" id="image" class="cursor-pointer">
 
                 @error("image")
                     <div class="text-red-500 mt-2">{{ $message }}</div>
@@ -73,14 +82,58 @@
 </div>
 
 <x-slot name="javascript">
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset("editor/build/ckeditor.js") }}"></script>
     <script>
-        ClassicEditor
-        .create(document.querySelector('#content') )
-        .catch(error => {
-            console.error( error );
-        } );
-    </script>
+        // Image preview
+        document.querySelector("#image").addEventListener("change", function() {
+            const [file] = this.files;
+            if(file) {
+                document.querySelector("#imgSrc").src = URL.createObjectURL(file);
+            }
+        });
+
+        // CKEditor settings
+        ClassicEditor.create(document.querySelector("#content"), {
+            toolbar: {
+                items: [
+                    "heading",
+                    "|",
+                    "bold",
+                    "italic",
+                    "link",
+                    "bulletedList",
+                    "numberedList",
+                    "|",
+                    "outdent",
+                    "indent",
+                    "|",
+                    "imageInsert",
+                    "insertTable",
+                    "undo",
+                    "redo",
+                ],
+            },
+            language: "pl",
+            image: {
+                toolbar: [
+                    "imageTextAlternative",
+                    "imageStyle:inline",
+                    "imageStyle:block",
+                    "imageStyle:side",
+                ],
+            },
+            table: {
+                contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
+            },
+            licenseKey: "",
+        })
+            .then((editor) => {
+                window.editor = editor;
+            })
+            .catch((error) => {
+                console.log("Wystąpił błąd CKEditor");
+    });
+	</script>
 </x-slot>
 
 

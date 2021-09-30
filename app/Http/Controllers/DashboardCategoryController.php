@@ -27,6 +27,7 @@ class DashboardCategoryController extends Controller
                 return $query->search($searchPhrase);
             })
                 ->withCount("posts")
+                ->orderBy("posts_count", "desc")
                 ->paginate(5),
         ]);
     }

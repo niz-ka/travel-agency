@@ -28,6 +28,7 @@
         "tailwindcss": "^2.0.2"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-image": "^30.0.0",
         "@fortawesome/fontawesome-free": "^5.15.4",
         "aos": "^2.3.4"
     }
