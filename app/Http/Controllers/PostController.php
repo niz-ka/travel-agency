@@ -4,18 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Category;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
+     * @param  \App\Models\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $searchPhrase = $request->search;
+
         return view("posts.index", [
             "posts" => Post::latest()
+                ->when($searchPhrase, function ($query, $searchPhrase) {
+                    return $query->search($searchPhrase);
+                })
                 ->with(["author:id,name", "category:id,name,slug"])
                 ->paginate(5),
             "categories" => Category::select("name", "id", "slug")->get(),

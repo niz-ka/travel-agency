@@ -15,12 +15,18 @@ class DashboardPostController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param \Illuminate\Http\Request $request;
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $searchPhrase = $request->search;
+
         return view("dashboard.posts.index", [
             "posts" => Post::where("user_id", auth()->user()->id)
+                ->when($searchPhrase, function ($query, $searchPhrase) {
+                    return $query->search($searchPhrase);
+                })
                 ->with(["category:name,id"])
                 ->latest()
                 ->paginate(5),

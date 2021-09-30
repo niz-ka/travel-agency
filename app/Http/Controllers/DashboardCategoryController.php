@@ -12,12 +12,22 @@ class DashboardCategoryController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param  \App\Models\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $searchPhrase = $request->search;
+
         return view("dashboard.categories.index", [
-            "categories" => Category::withCount("posts")->paginate(5),
+            "categories" => Category::when($searchPhrase, function (
+                $query,
+                $searchPhrase
+            ) {
+                return $query->search($searchPhrase);
+            })
+                ->withCount("posts")
+                ->paginate(5),
         ]);
     }
 

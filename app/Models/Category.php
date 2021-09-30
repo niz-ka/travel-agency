@@ -16,6 +16,11 @@ class Category extends Model
      */
     protected $fillable = ["name", "slug"];
 
+    public function scopeSearch($query, $search)
+    {
+        return $query->where("name", "LIKE", "%{$search}%");
+    }
+
     public function posts()
     {
         return $this->hasMany(Post::class);

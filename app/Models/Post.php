@@ -22,6 +22,13 @@ class Post extends Model
         "category_id",
     ];
 
+    public function scopeSearch($query, $search)
+    {
+        return $query
+            ->where("title", "LIKE", "%{$search}%")
+            ->orWhere("content", "LIKE", "%{$search}%");
+    }
+
     public function author()
     {
         return $this->belongsTo(User::class, "user_id");
